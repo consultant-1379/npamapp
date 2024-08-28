@@ -1,0 +1,26 @@
+{
+    "parent": "$(parentJson)/app.json",
+    "defaultPhase": "package",
+    "properties": {
+        "package": "npamcreateneaccountjob",
+        "name": "Npamcreateneaccountjob",
+        "version": "1.0.0",
+        "skeleton": "2.0.22",
+        "skeletonType": "app"
+    },
+    "phases": {
+        "package": {
+            "depends": [
+                "clean",
+                "analyze",
+                "test",
+                "compile",
+                "compress"
+            ]
+        }
+    },
+    "dependencies": {
+        "clientsdk": "1.90.1",
+        "scopingpanel": "1.33.2"
+    }
+}

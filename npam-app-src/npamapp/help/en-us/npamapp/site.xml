@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<site>
+    <title>Network Privileged Access Management</title>
+    <homeTitle>Home</homeTitle>
+    <home>
+        <blocks>
+            <block color="flat_darkGreen" icon="page" href="overview.xml">
+                <title>Overview</title>
+                <desc></desc>
+            </block>
+            <block color="flat_green" icon="screen" href="ui.xml">
+                <title>User Interface</title>
+                <desc></desc>
+            </block>
+            <block color="flat_purple" icon="book" href="tutorials/map.xml">
+                <title>Tutorials</title>
+                <desc></desc>
+            </block>
+       <!--     <block color="darkblue" icon="video" href="videos.xml">
+                <title>Videos</title>
+                <desc></desc>
+            </block> -->
+        </blocks>
+    </home>
+</site>
+

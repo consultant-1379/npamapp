@@ -1,0 +1,343 @@
+@progressbarCancelColor : #5c5c5c;
+@progressbarRunningColor : #00a9d4;
+@progressbarFinishSuccessColor : #89ba17;
+@progressbarFinishFailedColor : #e32119;
+
+.eaNpamjobdetails {
+  &-loadingAnimation {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2000;
+    background-color: rgba(255, 255, 255, 0.6);
+
+    &_hidden {
+      display: none;
+    }
+  }
+  &-clear {
+    clear: both;
+  }
+  &-clearDiv {
+    clear:both;
+  }
+}
+
+.eaNpamjobdetails-rMeJobDetails {
+  &-SelectedCount {
+    font-size: 13px;
+    float: left;
+    line-height: 1.5rem;
+    font-weight: normal;
+    margin-top: 4px;
+  }
+
+  &-SelectedOfTotal {
+    font-size: 12px;
+    display: inline-block;
+    width: auto;
+    margin: 0px 10px 0px 10px;
+    font-weight: normal;
+  }
+
+  &-filtersAppliedLabel {
+    font-size: 13px;
+    border-left: 1px solid #ccc;
+    margin: 5px 0 0 0px;
+    line-height: 2.2rem;
+    padding: 0 0 0 10px;
+    float: left;
+  }
+
+  &-filtersClearSelection {
+    font-size: 13px;
+    cursor: pointer;
+    margin: 15px 0 0 5px;
+    position: relative;
+    top: 8px;
+  }
+
+  &-JobSummary{
+    width: 100%;
+  }
+
+  &-Content{
+    margin-top: 5px;
+  }
+
+  &-clearSelection {
+    font-size: 13px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &-Header {
+    border-bottom: 1px solid #666666;
+    word-wrap: break-word;
+  }
+
+  &-CreatedBy {
+    width: fit-content;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-right: 10px;
+  }
+
+  &-TableSettings{
+    float:right;
+    right: 0;
+    margin-top: 04px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  &-Progress {
+    width: fit-content;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-right: 10px;
+
+    &-Bar {
+      font-size: .6em;
+      border: 0;
+      display: inline-block;
+
+      &_show {
+        display: block;
+      }
+      &_hide {
+        display: none;
+      }
+      &_darkGrey::-moz-progress-bar {
+        background: @progressbarCancelColor;
+      }
+      &_darkGrey::-webkit-progress-value {
+        background: @progressbarCancelColor;
+      }
+      &_blue::-moz-progress-bar {
+        background: @progressbarRunningColor;
+      }
+      &_blue::-webkit-progress-value {
+        background: @progressbarRunningColor;
+      }
+      &_green::-moz-progress-bar {
+        background: @progressbarFinishSuccessColor;
+      }
+      &_green::-webkit-progress-value {
+        background: @progressbarFinishSuccessColor;
+      }
+      &_red::-moz-progress-bar {
+        background: @progressbarFinishFailedColor;
+      }
+      &_red::-webkit-progress-value {
+        background: @progressbarFinishFailedColor;
+      }
+      &_empty::-moz-progress-bar {
+        background: none;
+      }
+      &_empty::-webkit-progress-value {
+        background: none;
+      }
+    }
+
+    &-Value {
+      font-size: 10px;
+      padding-left: 7px;
+      &_show {
+        display: block;
+      }
+      &_hide {
+        display: none;
+      }
+    }
+
+  }
+
+  &-Progresslabel{
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  &-Progress-Bar{
+    white-space: nowrap;
+  }
+
+  &-Status {
+    width: fit-content;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-right: 10px;
+  }
+
+  &-Type {
+    width: fit-content;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-right: 10px;
+  }
+
+  &-Result {
+    width: fit-content;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-right: 10px;
+  }
+
+  &-resultIcon {
+    &_show {
+      display: block;
+    }
+
+    &_hide {
+      display: none;
+    }
+  }
+
+  &-StartTime {
+    width: fit-content;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-right: 10px;
+  }
+
+  &-startTimeValue {
+    word-wrap: break-word;
+  }
+
+  &-endTimeValue {
+    word-wrap: break-word;
+  }
+
+  &-EndTime {
+    width: fit-content;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+//   &-descriptionValue {
+//     word-wrap: break-word;
+//   }
+//
+//   &-description {
+//     width: 100%;
+//     display: inline-block;
+//     margin-bottom: 15px;
+//   }
+
+  &-ActivityDetails-Header {
+    font-size: 15px;
+    border-bottom: 1px solid #666666;
+    padding-bottom: 5px;
+    height: 30px;
+  }
+
+  &-ActivityHeaderContent {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    float:left;
+  }
+
+  &-errorMessage {
+    margin-top: 0;
+  }
+
+&-footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 0;
+  }
+
+  &-pageSizeSelectHolder {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    width: 100px;
+    &_show {
+      display: inline-block;
+    }
+    &_hide {
+      display: none;
+    }
+  }
+
+  &-paginationHolder {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    flex-grow: 0;
+    flex-shrink: 1;
+    padding-bottom: 4px;
+    margin-right: 8px;
+    padding-right: 8px;
+
+    &_fullWidth {
+      max-width: 500px;
+      margin-right: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      right: 8px;
+      top: 2px;
+      bottom: 2px;
+      width: 2px;
+      background-color: #e6e6e6;
+      content: '';
+    }
+
+    &:empty {
+      &,
+      &:after {
+        display: none;
+      }
+    }
+    &_show {
+      display: inline-block;
+      width:auto;
+    }
+    &_hide {
+      display: none;
+    }
+  }
+
+  &-pageSizeSelect {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+  }
+
+  &-pageSizeSelectLabel {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    top: 2px;
+    max-width: calc(~'100% - 100px');
+    padding-right: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+}
+@media all and (max-width: 378px) and (min-width: 50px) {
+  .eaNpamjobdetails-rMeJobDetails{
+    &-TableSettings {
+      float: none;
+    }
+  }
+}

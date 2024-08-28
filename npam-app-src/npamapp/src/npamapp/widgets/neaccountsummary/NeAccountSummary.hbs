@@ -1,0 +1,19 @@
+<div class="eaNpamapp-NeAccountSummary">
+    <h4 class="eaNpamapp-NeAccountSummary-node-header ebText">{{dictionary.summary.nodeheader}}</h4>
+    {{#each summaryNodeData}}
+        <div class="eaNpamapp-NeAccountSummary-label ebText ebColor_grey_60">{{getKeyFromi18N @key}}</div>
+        <div class="eaNpamapp-NeAccountSummary-value ebText">{{this}}</div>
+    {{/each}}
+
+    <h4 class="eaNpamapp-NeAccountSummary-maintenanceuser-header ebText">{{dictionary.summary.maintenanceuserheader}}</h4>
+    {{#each summaryMaintenanceUserData}}
+        <div class="eaNpamapp-NeAccountSummary-label ebText ebColor_grey_60">{{getKeyFromi18N @key}}</div>
+        {{#if_password @key this }}{{/if_password}}
+    {{/each}}
+
+    <h4 class="eaNpamapp-NeAccountSummary-cbrs-header ebText">{{dictionary.summary.cbrsheader}}</h4>
+    {{#each summaryCbrsData}}
+        <div class="eaNpamapp-NeAccountSummary-label ebText ebColor_grey_60">{{getKeyFromi18N @key}}</div>
+       {{#if_password @key this }}{{/if_password}}
+    {{/each}}
+ </div>

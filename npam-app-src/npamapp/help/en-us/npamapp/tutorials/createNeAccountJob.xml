@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<task id="NPAMUI-CreateNeAccountUI">
+    <title>Create NE Accounts Job</title>
+    <taskbody>
+        <prereq>
+            <ul>
+                <li>You must have the NPAM_Administrator role.</li>
+                <li>To check currently assigned role(s), select the User ID on the top right hand corner,
+                    and click <b>View User Profile</b> from the drop-down list. Assigned roles are displayed.
+                </li>
+            </ul>
+        </prereq>
+        <context>
+            <p>
+                <b>Objective</b>
+            </p>
+            <p>
+                This tutorial describes the steps required to create an NE Account job for a node supporting NPAM feature.
+            </p>
+            <p>
+                Currently, the nodes supporting the feature are radio nodes (Network Elements only) in release 23.Q1
+                release or higher.
+            </p>
+            <ol>
+                <li>
+                    <xref href="#1">Launch Create NE Accounts Job</xref>
+                </li>
+                <li>
+                    <xref href="#2">Job Details and Node Selection</xref>
+                </li>
+                <li>
+                    <xref href="#3">Set Your Schedule</xref>
+                </li>
+                <li>
+                    <xref href="#4">Summary</xref>
+                </li>
+            </ol>
+        </context>
+
+        <steps>
+            <step id="1">
+                <cmd>Launch Create NE Accounts Job</cmd>
+                <info>
+                    <ol>
+                        <li>Launch <xref scope="external" href="#npamapp">Network Privileged Access Management
+                            application</xref>.
+                        </li>
+                        <li>Click on <b>Create Job</b>.</li>
+                        <li>Select <b>Create NE Accounts</b> item from pull down menu <b>Create Job</b>.</li>
+                        <li>The <b>Create NE Accounts Job</b> page is displayed.</li>
+                    </ol>
+                </info>
+            </step>
+            <step id="2">
+                <cmd>Job Details and Node Selection</cmd>
+                <info>
+                    <ol>
+                        <li>Leave the default <b>Job Name</b> or insert a custom ones.</li>
+                        <li>Enter a job description (optional).</li>
+                        <li>Add the nodes for the job by clicking the <b>Add Topology Data</b> and launching the <b>Add Network Objects</b> panel.</li>
+                        <li>For more information on adding nodes, see the <xref href="../addTopologyData.xml" type="concept">Add Topology Data</xref> section.</li>
+                    </ol>
+                </info>
+            </step>
+            <step id="3">
+                <cmd>Set Your Schedule</cmd>
+                <info>
+                   <ol>
+                        <li>Specify when the job must be executed. For more information on the scheduling options, see <xref href="../ui.xml#schedulingJob" type="concept">Scheduling Job</xref></li>
+                    </ol>
+                </info>
+            </step>
+            <step id="4">
+                <cmd>Summary</cmd>
+                <info>
+                    <ol>
+                        <li>
+                            Displays a summary of the job (job description. number of selected nodes, schedule time).
+                        </li>
+                        <li>Click on <b>Finish</b> button.
+                        </li>
+
+                    </ol>
+                </info>
+            </step>
+        </steps>
+        <result>
+            <p>The NE Accounts job is successfully created.</p>
+        </result>
+    </taskbody>
+</task>

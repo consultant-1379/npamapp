@@ -1,0 +1,45 @@
+.eaNpamlibrary-eaListBuilder-wListTree {
+
+    position: relative;
+    height: 100%;
+
+    &-header {
+        margin-bottom: 0;
+    }
+    &_disabled {
+        opacity: 0.4;
+        pointer-events: none;
+    }
+
+    &-filter {
+        position: relative;
+        padding: 6px 4px;
+        margin-bottom: 4px;
+        border-bottom: 1px solid #CCCCCC;
+
+        &Input {
+            padding-right: 20px;
+        }
+
+        &Icon {
+            position: absolute;
+            display: none;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            width: 16px;
+            height: 16px;
+            // centered horizontally width / 2
+            right: 8px;
+        }
+    }
+
+    &-tree {
+        position: relative;
+        height: calc(~'100% - 42px');
+    }
+
+    &-header + &-filter + &-tree {
+        height: calc(~'100% - 80px');
+    }
+}

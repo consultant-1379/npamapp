@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This document was created with Syntext Serna Free. -->
+<concept id="Tutorials">
+    <title>Tutorials</title>
+    <abstract>
+        <shortdesc>These tutorials explain how to create a NPAM Job.</shortdesc>
+    </abstract>
+    <conbody>
+        <section>
+            <p>
+                <image href="/resources/Tutorial.svg" alt="Tutorial" />
+                <xref type="task" href="tutorials/createNeAccountJob.xml">Create NE Account Job</xref>
+            </p>
+        </section>
+    </conbody>
+</concept>

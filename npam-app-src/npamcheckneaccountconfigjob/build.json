@@ -1,0 +1,53 @@
+{
+    "parent": "$(parentJson)/app.json",
+    "defaultPhase": "package",
+    "properties": {
+        "package": "npamcheckneaccountconfigjob",
+        "name": "Npamcheckneaccountconfigjob",
+        "version": "1.0.0",
+        "skeleton": "2.0.22",
+        "skeletonType": "app"
+    },
+    "phases": {
+        "package": {
+            "depends": [
+                "clean",
+                "analyze",
+                "test",
+                "compile",
+                "compress"
+            ]
+        }
+    },
+    "dependencies": {
+        "clientsdk": "1.90.1",
+        "scopingpanel": "1.33.2",
+        "assets": "1.11.9",
+        "chartlib": "1.7.3",
+        "jscore": "2.1.0",
+        "container": "1.17.2",
+        "i18n": "3.0.4",
+        "contextmenu": "0.1.17",
+        "widgets": "1.11.7",
+        "dataviz": "0.3.2",
+        "flyout": "0.2.5",
+        "formvalidator": "0.3.1",
+        "helpsdk": "2.12.5",
+        "layouts": "1.9.7",
+        "logger": "0.3.1",
+        "mapping": "1.0.4",
+        "navigation": "1.1.2",
+        "systemtime": "0.0.12",
+        "tablelib": "0.16.2",
+        "terminal": "1.1.1",
+        "uit": "1.0.1",
+        "webpush": "0.4.1",
+        "networkobjectlib": "1.107.1",
+        "collection-management-lib": "1.10.2",
+        "actionlibrary": "1.42.3",
+        "applib": "1.42.3",
+        "router": "1.0.3",
+        "networkexplorerlib": "1.77.11",
+        "grammarparsinglibrary": "1.77.11"
+    }
+}

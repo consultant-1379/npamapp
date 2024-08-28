@@ -1,0 +1,134 @@
+{
+  "columns": [
+    {
+      "title": "Job Name",
+      "attribute": "jobName"
+    },
+    {
+      "title": "Job Type",
+      "attribute": "jobType"
+    },
+    {
+      "title": "Created By",
+      "attribute": "createdBy"
+    },
+    {
+      "title": "No Of Nodes",
+      "attribute": "totalNoOfNEs"
+    },
+    {
+      "title": "Progress",
+      "attribute": "progress"
+    },
+    {
+      "title": "Status",
+      "attribute": "status"
+    },
+    {
+      "title": "Result",
+      "attribute": "result"
+    },
+    {
+      "title": "Start Date",
+      "attribute": "startTime"
+    },
+    {
+      "title": "End Date",
+      "attribute": "endTime"
+    }
+  ],
+  "totalCount": 15,
+  "result": [
+    {
+      "jobId": 281474979232949,
+      "jobTemplateId": "011",
+      "jobTemplateIdAsLong": "28178783478012922",
+      "jobName": "job_11",
+      "jobType": "Upgrade",
+      "createdBy": "OSS_USER1",
+      "noOfMEs": 10,
+      "progress": 100,
+      "status": "COMPLETED",
+      "jobIdAsLong": "281474979232949",
+      "result": "SUCCESS",
+      "startTime": "1435929077326",
+      "endTime": "1435929197098",
+      "periodic": false,
+      "totalNoOfNEs": "10",
+      "comment": []
+    },
+    {
+      "jobId": 281474979232950,
+      "jobTemplateId": "012",
+      "jobTemplateIdAsLong": "28178783478012923",
+      "jobName": "job_12",
+      "jobType": "Backup",
+      "createdBy": "OSS_USER",
+      "progress": 94,
+      "status": "RUNNING",
+      "result": "Done",
+      "startTime": "1435929077326",
+      "endTime": "1435929197098",
+      "periodic": false,
+      "totalNoOfNEs": "12",
+      "jobIdAsLong": "281474979232950",
+      "comment": [],
+      "noOfMes": 10
+    },
+    {
+      "jobId": 281474979232951,
+      "jobTemplateId": "013",
+      "jobTemplateIdAsLong": "28178783478012924",
+      "jobName": "job_13",
+      "jobType": "Delete Backup",
+      "createdBy": "OSS_USER",
+      "progress": 94,
+      "status": "RUNNING",
+      "result": "Done",
+      "startTime": "1435929077326",
+      "endTime": "1435929197098",
+      "periodic": true,
+      "totalNoOfNEs": "10",
+      "jobIdAsLong": "2814749792329451",
+      "comment": [],
+      "noOfMes": 10
+    },
+    {
+      "jobId": 281474979232952,
+      "jobTemplateId": "014",
+      "jobTemplateIdAsLong": "28178783478012925",
+      "jobName": "job_14",
+      "jobType": "License",
+      "createdBy": "OSS_USER",
+      "progress": 94,
+      "status": "RUNNING",
+      "result": "Done",
+      "startTime": "1435929077326",
+      "endTime": "1435929197098",
+      "periodic": true,
+      "totalNoOfNEs": "10",
+      "jobIdAsLong": "281474979232952",
+      "comment": [],
+      "noOfMes": 10
+    },
+    
+    {
+      "jobId": 281474979232946,
+      "jobTemplateId": "015",
+      "jobTemplateIdAsLong": "28178783478012919",
+      "jobName": "job_15",
+      "jobType": "Restore Backup",
+      "createdBy": "OSS_USER",
+      "noOfMes": 10,
+      "progress": 94,
+      "status": "RUNNING",
+      "result": "Done",
+      "startTime": "1435929077326",
+      "endTime": "1435929197098",
+      "periodic": false,
+      "totalNoOfNEs": "10",
+      "jobIdAsLong": "281474979232946",
+      "comment": []
+    }
+  ]
+}

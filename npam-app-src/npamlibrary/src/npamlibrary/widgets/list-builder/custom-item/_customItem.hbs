@@ -1,0 +1,27 @@
+<div class="eaNpamlibrary-eaListBuilder-wCustomItem">
+    <span class="eaNpamlibrary-eaListBuilder-wCustomItem-label
+        {{#if filter}}eaNpamlibrary-eaListBuilder-wCustomItem-label_filtered{{/if}}
+        {{#if locked}}ebText_disabled{{/if}}
+        ">
+        {{#if filter}}
+            {{#if filterMatch}}
+                <span class="eaNpamlibrary-eaListBuilder-wCustomItem-preFilter">{{preFilter}}</span>
+                <span class="eaNpamlibrary-eaListBuilder-wCustomItem-filter">{{filter}}</span>
+                <span class="eaNpamlibrary-eaListBuilder-wCustomItem-postFilter">{{postFilter}}</span>
+            {{else}}
+                <span class="eaNpamlibrary-eaListBuilder-wCustomItem-noMatch">{{label}}</span>
+            {{/if}}
+        {{else}}
+            {{label}}
+        {{/if}}
+    </span>
+
+    {{#if warning}}
+        <i class="ebIcon ebIcon_warning eaNpamlibrary-eaListBuilder-wCustomItem-iconWarning" {{#if warningReason}}title="{{warningReason}}"{{/if}}></i>
+    {{/if}}
+
+    {{#if locked}}
+        <i class="ebIcon ebIcon_lock eaNpamlibrary-eaListBuilder-wCustomItem-iconLocked" {{#if lockReason}}title="{{lockReason}}"{{/if}}></i>
+    {{/if}}
+</div>
+<e-link src="./_customItem.less"/>

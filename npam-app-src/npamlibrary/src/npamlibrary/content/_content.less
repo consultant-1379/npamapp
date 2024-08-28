@@ -1,0 +1,45 @@
+.eaNpamlibrary-content {
+
+  height: auto;
+  margin: 0 0 0.6rem;
+  padding: 0.6rem 0;
+  &-SectionHeading {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 0.6rem 0 0 0
+  }
+  &-close {
+    position: absolute;
+    top: calc(~'50% - 8px');
+    right: 5px;
+    display: none;
+    cursor: pointer;
+    &_show{
+      &_true{
+        display: block;
+      }
+    }
+  }
+
+  &-headerContent {
+    position: relative;
+    display: inline-block;
+    background: #fff;
+    z-index: 2;
+    margin: -0.6rem 0;
+    padding: 0.6rem 0;
+  }
+  &-bodyHolder {
+    width: 100%;
+    height: calc(~"100% - 44px");
+    overflow-y: auto;
+  }
+  &-bodyBlock {
+    width: 100%;
+  }
+
+  &-header {
+    padding-top: 0.9rem;
+  }
+}

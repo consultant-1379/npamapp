@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="About">
+    <title>About</title>
+    <conbody>
+        <dl>
+            <dlentry id="appName">
+                <dt><b>App</b></dt>
+                <dd>Network Privileged Access Management</dd>
+            </dlentry>
+            <dlentry id="productNumber">
+                <dt><b>Product Number</b></dt>
+                <dd>CNA 403 3845</dd>
+            </dlentry>
+          <dlentry id="link">
+                <dt><b>App Link</b></dt>
+                <dd>#npamapp</dd>
+            </dlentry>
+        </dl>
+
+    </conbody>
+</concept>

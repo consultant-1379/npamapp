@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.ericsson.nms</groupId>
+        <artifactId>integration</artifactId>
+        <version>15.2.0.40</version>
+    </parent>
+
+    <groupId>com.ericsson.oss.presentation.client.security.npam</groupId>
+    <artifactId>npamapp</artifactId>
+    <version>1.10.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>[${project.artifactId}] JEE8 Project</name>
+
+    <url>http://www.ericsson.com</url>
+    <organization>
+        <name>Ericsson</name>
+    </organization>
+
+    <properties>
+        <ericsson.scm.url>scm:git:[fetch=]
+            ssh://gerritmirror-ha.lmera.ericsson.se:29418/OSS/ENM-Parent/SQ-Gate/com.ericsson.oss.presentation.client.security.npam/npamapp[push=]ssh://gerrit.ericsson.se:29418/OSS/ENM-Parent/SQ-Gate/com.ericsson.oss.presentation.client.security.npam/npamapp</ericsson.scm.url>
+        <nodeDir>/proj/ciexadm200/tools/node/node-v12.6.0-linux-x64</nodeDir>
+	    <node>${nodeDir}/bin/node</node>
+	    <npm>${nodeDir}/bin/npm</npm>
+	    <cdt-build>${nodeDir}/lib/node_modules/@uisdk/cdt-build/</cdt-build>
+<!--        <sonar.sources>npamapp/src,npamlibrary/src,npamcreateneaccountjob/src,npamdeleteneaccountjob/src</sonar.sources>-->
+        <sonar.javascript.lcov.reportPaths>npamapp/target/reports/unit/jscover.lcov,npamapp/target/reports/bit/jscover.lcov,npamlibrary/target/reports/unit/jscover.lcov,npamlibrary/target/reports/bit/jscover.lcov,npamcreateneaccountjob/target/reports/unit/jscover.lcov,npamcreateneaccountjob/target/reports/bit/jscover.lcov,npamdeleteneaccountjob/target/reports/unit/jscover.lcov,npamdeleteneaccountjob/target/reports/bit/jscover.lcov,npamrotateaccountjob/target/reports/unit/jscover.lcov,npamrotateneaccountjob/target/reports/bit/jscover.lcov,npamrotateneaccountjob/target/reports/unit/jscover.lcov,npamjobdetails/target/reports/unit/jscover.lcov,npamjob/target/reports/unit/jscover.lcov,npamjob/target/reports/bit/jscover.lcov</sonar.javascript.lcov.reportPaths>
+        <sonar.exclusions>target/**,.cdt/**</sonar.exclusions>
+    </properties>
+
+    <!--Profiles for site documentation -->
+    <profiles>
+        <profile>
+            <id>site_latest</id>
+            <distributionManagement>
+                <site>
+                    <id>site</id>
+                    <name>Site</name>
+                    <url>${site.url}/npamapp/latest</url>
+                </site>
+            </distributionManagement>
+        </profile>
+
+        <!--Profile to stage site for review -->
+        <profile>
+            <id>site_review</id>
+            <distributionManagement>
+                <site>
+                    <id>site</id>
+                    <name>Site</name>
+                    <url>${site.url}</url>
+                </site>
+            </distributionManagement>
+        </profile>
+    </profiles>
+
+    <!--Deployment of versioned documentation -->
+    <distributionManagement>
+        <site>
+            <id>site</id>
+            <name>Site</name>
+            <url>${site.url}/npamapp/${project.version}</url>
+        </site>
+    </distributionManagement>
+
+    <modules>
+        <module>npam-app-src</module>
+        <module>npam-app-test</module>
+        <module>ERICnpamui_CXP9043002</module>
+    </modules>
+
+    <scm>
+        <developerConnection>${ericsson.scm.url}</developerConnection>
+        <connection>${ericsson.scm.url}</connection>
+        <tag>npamapp-1.3.17</tag>
+    </scm>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.3</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>2.19.1</version>
+                    <configuration>
+                        <systemPropertyVariables>
+                            <skipIntegration />
+                        </systemPropertyVariables>
+                        <includes>
+                            <include>**/*Spec.*</include>
+                        </includes>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

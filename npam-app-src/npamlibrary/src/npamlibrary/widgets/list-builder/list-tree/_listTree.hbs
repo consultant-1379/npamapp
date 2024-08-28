@@ -1,0 +1,11 @@
+<div class="eaNpamlibrary-eaListBuilder-wListTree">
+    {{#if hasTitle}}
+        <h3 class="eaNpamlibrary-eaListBuilder-wListTree-header" e-id="listTitle">{{labels.title}}</h3>
+    {{/if}}
+    <div class="eaNpamlibrary-eaListBuilder-wListTree-filter">
+        <input type="text" class="ebInput ebInput_width_full eaNpamlibrary-eaListBuilder-wListTree-filterInput" e-id="filter" placeholder="{{labels.filter}}"/>
+        <i class="ebIcon ebIcon_close ebIcon_interactive eaNpamlibrary-eaListBuilder-wListTree-filterIcon" e-id="filterIcon"></i>
+    </div>
+    <div class="eaNpamlibrary-eaListBuilder-wListTree-tree" e-id="tree"></div>
+</div>
+<e-link src="./_listTree.less"/>

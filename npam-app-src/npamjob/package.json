@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cdt-build": "*",
+    "cdt-package": "*",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "request": "^2.88.2"
+  }
+}

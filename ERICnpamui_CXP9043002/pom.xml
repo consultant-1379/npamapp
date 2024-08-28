@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>npamapp</artifactId>
+    <groupId>com.ericsson.oss.presentation.client.security.npam</groupId>
+
+    <version>1.10.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>ERICnpamui_CXP9043002</artifactId>
+  <packaging>${rpm.packaging}</packaging>
+  <name>[${project.parent.artifactId}] CXP module</name>
+
+  <properties>
+    <publish_artifact>true</publish_artifact>
+    <media.category>service</media.category>
+    <com.ericsson.oss.rpm.architecture>noarch</com.ericsson.oss.rpm.architecture>
+    <rpm-root>opt</rpm-root>
+    <comp-name>ericsson</comp-name>
+    <install-path>${project.artifactId}</install-path>
+
+    <appId>npamapp</appId>
+    <jboss-username>jboss_user</jboss-username>
+    <jboss-groupname>jboss</jboss-groupname>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.ericsson.oss.itpf.deployment</groupId>
+        <artifactId>deployment-descriptor-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>configurable-entity</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <configEntity>
+            <stereotype>WEB_APP</stereotype>
+            <parameters>
+              <itemType name="vm-package">
+                <property name="name" defaultValue="ERICnpamui_CXP9043002" />
+              </itemType>
+            </parameters>
+          </configEntity>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.5</version>
+        <executions>
+          <execution>
+            <id>unpack_tools</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>${project.groupId}</groupId>
+                  <artifactId>npam-app-src</artifactId>
+                  <version>${project.version}</version>
+                  <type>tar.gz</type>
+                  <overWrite>true</overWrite>
+                  <outputDirectory>${project.build.directory}/dependencies/html</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.6</version>
+        <executions>
+          <execution>
+            <id>filter-post-install-script</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <!-- Before the build the script will be copied to this location with the variables replaced by their values -->
+              <outputDirectory>${basedir}/target/scripts</outputDirectory>
+              <resources>
+                <resource>
+                  <!-- set the source folder for your post install script -->
+                  <directory>../npam-app-src/${appId}/launcher/scripts</directory>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>rpm-maven-plugin</artifactId>
+
+        <configuration>
+          <group>Applications/System</group>
+          <needarch>noarch</needarch>
+          <autoProvides>true</autoProvides>
+          <autoRequires>false</autoRequires>
+
+          <mappings combine.self="override">
+            <mapping>
+              <directory>/var/www/html</directory>
+              <filemode>775</filemode>
+              <username>root</username>
+              <groupname>root</groupname>
+              <directoryIncluded>false</directoryIncluded>
+              <recurseDirectories>false</recurseDirectories>
+              <sources>
+                <source>
+                  <location>${project.build.directory}/dependencies/html</location>
+                  <excludes>
+                    <exclude>**/cdt.json</exclude>
+                  </excludes>
+                </source>
+              </sources>
+            </mapping>
+
+            <!-- Copy the metadata files to a local folder in http server -->
+            <mapping>
+              <directory>/ericsson/httpd/data/apps/${appId}</directory>
+              <filemode>550</filemode>
+              <username>${jboss-username}</username>
+              <groupname>${jboss-groupname}</groupname>
+              <directoryIncluded>false</directoryIncluded>
+              <recurseDirectories>false</recurseDirectories>
+              <sources>
+                <source>
+                  <location>../npam-app-src/${appId}/launcher/metadata/${appId}</location>
+                </source>
+              </sources>
+            </mapping>
+            <mapping>
+              <directory>/ericsson/httpd/data/apps/${appId}/locales/en-us</directory>
+              <filemode>550</filemode>
+              <username>${jboss-username}</username>
+              <groupname>${jboss-groupname}</groupname>
+              <directoryIncluded>false</directoryIncluded>
+              <recurseDirectories>false</recurseDirectories>
+              <sources>
+                <source>
+                  <location>../npam-app-src/${appId}/locales/en-us/${appId}/</location>
+                </source>
+              </sources>
+            </mapping>
+          </mappings>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

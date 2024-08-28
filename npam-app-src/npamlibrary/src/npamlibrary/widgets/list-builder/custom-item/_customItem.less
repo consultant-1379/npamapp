@@ -1,0 +1,42 @@
+@itemClass: eaNpamlibrary-eaListBuilder-wCustomItem;
+
+.@{itemClass} {
+    position: relative;
+
+    &-label {
+        width: calc(~'100% - 30px');
+
+        &_filtered {
+            // removes the white spaces between the pre/post/filter
+            font-size: 0;
+
+            .@{itemClass} {
+                &-noMatch,
+                &-preFilter,
+                &-postFilter {
+                    display: inline-block;
+                    white-space: pre;
+                    font-size: 1.2rem;
+                    color: #8d8d8d;
+                }
+
+                &-noMatch {
+                    font-style: italic;
+                }
+
+                &-filter {
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    &-icon {
+        &Locked,
+        &Warning {
+            float: right;
+            margin: 8px 4px 8px 0;
+        }
+    }
+}

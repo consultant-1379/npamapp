@@ -1,0 +1,6 @@
+{
+    "header": "Rotate NE Account Credentials",
+    "headerFromFile": "Rotate NE Account Credentials From File",
+    "content": "Are you sure you want to <replace> Rotate NE Account Credentials Job?",
+    "tryAgain": "Unable to contact server. Please try again later..."
+}

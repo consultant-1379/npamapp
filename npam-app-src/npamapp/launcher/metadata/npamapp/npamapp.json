@@ -1,0 +1,19 @@
+{
+  "id": "npamapp",
+  "name": "NPAM Management",
+  "path": "/#npamapp",
+  "type": "web",
+  "version": 1,
+  "openInNewWindow": false,
+  "resources": [
+    "neaccount"
+  ],
+  "groups": [
+    {
+      "id": "Security",
+      "name": "Security"
+    }
+  ],
+  "provideActions": [
+  ]
+}

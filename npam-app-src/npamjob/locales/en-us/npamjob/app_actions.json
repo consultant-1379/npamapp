@@ -1,0 +1,23 @@
+{
+  "shmsoftwareinventory-view-software-inventory": {
+    "label": "View Software Inventory"
+  },
+  "shmlicenseinventory-view-license-inventory": {
+    "label": "View License Inventory"
+  },
+  "shmhardwareinventory-view-hardware-inventory": {
+    "label": "View Hardware Inventory"
+  },
+  "shmbackupinventory-view-backup-inventory": {
+    "label": "View Backup Inventory"
+  },
+  "shmcreateupgradejob-upgrade-node-software": {
+    "label": "Upgrade Node Software"
+  },
+  "shmcreatebackupjob-backup-node": {
+    "label": "Backup Node"
+  },
+  "shmnoderestartjob-restart-node": {
+    "label": "Restart Node"
+  }
+}

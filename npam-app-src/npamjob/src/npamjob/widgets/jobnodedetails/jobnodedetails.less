@@ -1,0 +1,150 @@
+@labelColor: #8d8d8d;
+@valueColor: black;
+
+.eaNpamjob-wJobNodeDetails {
+  height: 100%;
+  &-notificationHolder{
+    margin-top: 2px;
+  }
+  &-JobHeader {
+    line-height: 1.4rem;
+    word-wrap: break-word;
+  }
+  &-export {
+        margin : auto;
+  }
+  &-loaderHolder {
+    margin-top: 50px;
+    &_show {
+      display: block;
+    }
+    &_hide {
+      display: none;
+    }
+  }
+
+  &-ContentHolder {
+    width: 100%;
+    height: auto;
+    &_show {
+      display: block;
+    }
+    &_hide {
+      display: none;
+    }
+  }
+  &-DefaultMessage {
+    margin-top: 10px;
+    &_show {
+      display: block;
+    }
+    &_hide {
+      display: none;
+    }
+  }
+  &-JobContent {
+    text-align: left;
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+    word-wrap: break-word;
+    padding-top: 5px;
+    &_show {
+      display: block;
+    }
+    &_hide {
+      display: none;
+    }
+
+    &-numberOfNodes {
+      padding-top: 8px;
+
+      &-Key {
+        font-size: 1.2rem;
+        color: @labelColor;
+        line-height: 2.4rem;
+      }
+      &-Value {
+        vertical-align: middle;
+        line-height: 1.2rem;
+        font-size: 1.2rem;
+        color: @valueColor;
+      }
+      &_show {
+        display: block;
+      }
+      &_hide {
+        display: none;
+      }
+    }
+    &-numberOfNodesSkipped-Key {
+      font-size: 1.2rem;
+      color: @labelColor;
+      line-height: 2.4rem;
+    }
+
+    &-numberOfNodesSkipped-Value {
+      vertical-align: middle;
+      line-height: 1.2rem;
+      font-size: 1.2rem;
+      color: @valueColor;
+    }
+
+    &-ViewJobNodeInventory {
+      margin-left: 2px;
+    }
+
+    &-noteHolder {
+      &-label {
+        font-weight: bold;
+      }
+      &-note {
+        font-size: 1.2rem;
+        color: @labelColor;
+        line-height: 2.4rem;
+      }
+    }
+
+    &-errorMsgHolder {
+      &_show {
+        display: block;
+      }
+      &_hide {
+        display: none;
+      }
+      &-message {
+        font-weight: bold;
+        font-size: 1.2rem;
+        line-height: 2.4rem;
+
+      }
+    }
+
+    &-accordionHolder {
+      &_show {
+        display: block;
+      }
+      &_hide {
+        display: none;
+      }
+    }
+  }
+
+  &-narrowView {
+    display: none;
+  }
+  &-fullView {
+    display: block;
+  }
+
+  @media screen and (max-width: 768px) {
+    &-narrowView {
+      display: block;
+    }
+
+    &-fullView {
+      display: none;
+    }
+  }
+
+}

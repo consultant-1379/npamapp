@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="ESUM-AddTopology">
+    <title>Add Topology Data</title>
+    <conbody>
+    <section>
+                <xref href="ui.xml" type="concept">Back to User Interface</xref>
+        </section>
+        <section>
+            <p>
+                NPAM enables you to administer and view information about the nodes in your network.
+                Use the <b>Add Network Objects</b> panel to select the nodes you want to perform an administration job
+                on or the nodes you want to retrieve information from.
+            </p>
+            <p>
+                To launch the <b>Add Network Objects</b> panel, select the Add Topology Data button.
+                The <b>Add Topology Data</b> button is available in the <b>Job Details and Node Selection</b>
+                step of the NPAM wizards and from the <b>Network</b> panel which is
+                available from the action bar in the different NPAM applications.
+            </p>
+            <p>
+                The <b>Add Network Objects</b> panel menu provides the following tabs:
+            </p>
+            <ul>
+                <li>
+                    <b>Topology</b> tab  – use this to select individual nodes from a logical view of your network
+                </li>
+                <li>
+                    <b>Search</b> tab – use this to select nodes from the list of nodes generated when you Enter Search Criteria
+                </li>
+                <li>
+                    <b>Collections</b> tab – use this to select a collection, or collections, of nodes
+                </li>
+                <li>
+                    <b>Saved Searches</b> tab – use this to select a saved search
+                </li>
+            </ul>
+            <p>
+                Use the relevant tab to specify the required network objects and select <b>Add</b>.
+                This returns you to the <b>Job Details and Node Selection</b> step of the
+                NPAM wizard, or, to the Network panel in the relevant NPAM application page.
+            </p>
+            <p>
+                <b>Note:</b> In the <b>Search</b> tab if you select Managed Objects (MOs) that NPAM does not support
+                and select <b>Add</b>, the node is automatically discarded by Job, as reported in this note:
+            </p>
+            <image href="resources/unSupportedMO.png"/>
+        </section>
+        <section>
+            <p>When creating a NPAM job using the wizard the following behaviour applies:</p>
+            <ul>
+                <li>If the nodes are added as individual network objects (using the <b>Search</b> or <b>Topology</b> tabs),
+                        the individual nodes can be removed using the <b>Remove Selected</b> button, which is available in the wizard action when node(s) are selected.
+                </li>
+                <li>
+                    If the nodes are added as a collection or the saved search, there is no option to remove individual network objects.
+                    Use the <b>Network Explorer</b> application for modifications (add/remove) on a collection or saved search.
+                        The entire collection or saved search can be removed using the delete icon <image href="resources/deleteIcon.png"/>
+                </li>
+            </ul>
+        </section>
+    </conbody>
+</concept>

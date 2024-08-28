@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>npamapp</artifactId>
+        <groupId>com.ericsson.oss.presentation.client.security.npam</groupId>
+
+        <version>1.10.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>npam-app-src</artifactId>
+    <name>[${project.parent.artifactId}] npam-app-src</name>
+
+    <properties>
+        <packagesToBuild>npamlibrary,npamcreateneaccountjob,npamdeleteneaccountjob,npamrotateneaccountjob,npamcheckneaccountconfigjob,npamjob,npamjobdetails,npamapp</packagesToBuild>
+        <ericsson.scm.url>
+		scm:git:[fetch=]ssh://gerritmirror-ha.lmera.ericsson.se:29418/OSS/com.ericsson.oss.presentation.client.security.npam/npamapp[push=]ssh://gerrit.ericsson.se:29418/OSS/com.ericsson.oss.presentation.client.security.npam/npamapp
+        </ericsson.scm.url>
+<!--	    <sonar.sources>npamapp/src,npamlibrary/src,npamcreateneaccountjob/src,npamdeleteneaccountjob/src</sonar.sources>-->
+<!--        <sonar.javascript.lcov.reportPaths>npamapp/target/reports/unit/jscover.lcov,npamapp/target/reports/bit/jscover.lcov,npamlibrary/target/reports/unit/jscover.lcov,npamlibrary/target/reports/bit/jscover.lcov,npamcreateneaccountjob/target/reports/unit/jscover.lcov,npamcreateneaccountjob/target/reports/bit/jscover.lcov,npamdeleteneaccountjob/target/reports/unit/jscover.lcov,npamdeleteneaccountjob/target/reports/bit/jscover.lcov</sonar.javascript.lcov.reportPaths>-->
+<!--        <sonar.exclusions>target/**,.cdt/**</sonar.exclusions>-->
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <id>run_build</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>${node}</executable>
+                            <arguments>
+                                <argument>${cdt-build}</argument>
+                                <argument>--packages</argument>
+                                <argument>${packagesToBuild}</argument>
+                                <argument>--no-color</argument>
+                                <argument>--prop-version</argument>
+                                <argument>${project.version}</argument>
+                                <argument>--prop-node</argument>
+                                <argument>${node}</argument>
+                                <argument>--output</argument>
+                                <argument>${basedir}/target/${project.artifactId}-${project.version}.tar.gz</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <id>attach_tgz</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>${basedir}/target/${project.artifactId}-${project.version}.tar.gz</file>
+                                    <type>tar.gz</type>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>windows</id>
+            <activation>
+                <os>
+                    <family>Windows</family>
+                </os>
+            </activation>
+            <properties>
+                <node>node</node>
+                <npm>npm.cmd</npm>
+                <cdt-build>${user.home}/AppData/Roaming/npm/node_modules/@uisdk/cdt-build/index.js</cdt-build>
+            </properties>
+        </profile>
+        <profile>
+            <id>elx</id>
+            <activation>
+                <file>
+                    <exists>/etc/eowner</exists>
+                </file>
+            </activation>
+            <properties>
+                <node>nodejs</node>
+                <npm>npm</npm>
+		<cdt-build>${nodeDir}/lib/node_modules/@uisdk/cdt-build/</cdt-build>
+            </properties>
+        </profile>
+    </profiles>
+
+</project>

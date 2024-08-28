@@ -1,0 +1,33 @@
+@menuWidth: 50px;
+
+.eaNpamlibrary-eaListBuilder-wListBuilder {
+
+    position: relative;
+    display: block;
+    height: 100%;
+    font-size: 0;
+
+    &-treeHolder {
+        width: calc(~'50% - @{menuWidth} / 2 - 8px');
+    }
+
+    &-menuHolder {
+        width: @menuWidth;
+        background-color: #efefef;
+        margin: 0 4px;
+    }
+
+    &-treeHolder,
+    &-menuHolder {
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        vertical-align: top;
+        font-size: 1.2rem;
+    }
+
+    &_margin_title {
+        margin-top: 36px;
+        height: calc(~'100% - 36px');
+    }
+}

@@ -1,0 +1,254 @@
+.eaNpamlibrary-eaListBuilder-rMain {
+    min-height: 250px;
+    padding: 16px 0;
+    box-sizing: border-box;
+}
+
+.eaNpamlibrary-rInputMessage {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.eaNpamlibrary-wJobdetails {
+  &-row {
+    margin-bottom: 1rem;
+  }
+  &-inputFieldInfo {
+    color:#999;
+    font-size:11px;
+  }
+  &-inputFieldAndLoader {
+    margin-left:11%;
+    width:25%;
+  }
+   &-loadingIcons {
+    float:right;
+  }
+
+  &-inputFieldInfoDes {
+    font-size:11px;
+    color:#999;
+    margin-left:11%;
+  }
+
+  &-jobName {
+//     font-weight: bold;
+    width: 11%;
+  }
+  &-jobNameTextBox {
+    width: 25%;
+  }
+  &-jobDescription {
+//     font-weight: bold;
+    width: 11%;
+    position: relative;
+    top: -30px;
+  }
+  &-jobDescriptionBox {
+    width: 25%;
+  }
+  &-fileName {
+//     font-weight: bold;
+    width: 11%;
+  }
+  &-fileNameList {
+    width: 40%;
+  }
+
+  &-defaultMessage {
+    float: none !important;
+    color: #999999;
+    line-height: 2rem;
+    display: block;
+    margin-bottom:15px;
+  }
+  &-errorMessage {
+    color: #999999;
+    line-height: 2rem;
+    display: none;
+    margin-top: 1rem;
+  }
+
+  &-mainPageLimit {
+    margin-right: 5px;
+    margin-top: 0.5rem;
+  }
+
+  &-text-required{
+    font-size: 1.2rem;
+    color: #333333;
+  }
+  &-text-required:after{
+    display: inline-block;
+    width: 0.5rem;
+    margin: 0 0.6rem 0 0.1rem;
+    vertical-align: top;
+    color: #e32119;
+    content: '*';
+  }
+  &-noHighlight{
+    border: none !important;
+    cursor: auto !important;
+  }
+  &-noHighlight:hover{
+    background-color: white !important;
+  }
+  &-noBorder{
+    border: none !important;
+  }
+}
+
+@media all and (max-width: 1081px) and (min-width: 550px) {
+  .eaNpamlibrary-wJobdetails {
+    &-inputFieldAndLoader {
+        width:50%;
+        margin-left:20%;
+    }
+    &-inputFieldInfoDes {
+      margin-left:20%;
+    }
+    &-jobName {
+      width: 20%;
+    }
+    &-fileName {
+      width: 20%;
+    }
+    &-jobDescription {
+      top: -22px;
+      width: 20%;
+    }
+    &-jobDescriptionBox {
+      margin-top: 0.5%;
+    }
+    &-jobNameTextBox {
+      width: 50%;
+    }
+    &-jobDescriptionBox {
+      width: 50%;
+    }
+    &-fileNameList {
+      width: 50%;
+    }
+  }
+}
+
+@media all and (max-width: 549px) and (min-width: 442px) {
+  .eaNpamlibrary-wJobdetails {
+    &-inputFieldAndLoader {
+      width:80%;
+      margin-left:0%;
+    }
+    &-loadingIcons {
+      float:right;
+    }
+    &-inputFieldInfoDes {
+      margin-left:0%;
+    }
+    &-jobName {
+      display: block;
+      width: 80%;
+    }
+    &-fileName {
+      display: block;
+      width: 80%;
+    }
+    &-jobDescription {
+      display: block;
+      position: none;
+      top: 0;
+      width: 80%;
+    }
+    &-jobDescriptionBox {
+      width: 80%;
+      margin-top: 5px;
+    }
+    &-jobNameTextBox {
+      margin-top: 5px;
+      width: 80%;
+    }
+    &-fileNameList {
+      margin-top: 5px;
+      width: 80%;
+    }
+  }
+}
+
+@media all and (max-width: 441px) and (min-width: 328px) {
+  .eaNpamlibrary-wJobdetails {
+    &-inputFieldInfo {
+      margin-left:0%;
+    }
+
+    &-inputFieldAndLoader{
+      width: 80%;
+      margin-left:0%;
+    }
+    &-inputFieldInfoDes {
+      margin-left:0%;
+    }
+    &-jobName {
+      display: block;
+      width: 80%;
+    }
+    &-fileName {
+      display: block;
+      width: 80%;
+    }
+    &-jobDescription {
+      display: block;
+      position: none;
+      top: 0;
+      width: 80%;
+    }
+    &-jobDescriptionBox {
+      width: 80%;
+      margin-top: 5px;
+    }
+    &-jobNameTextBox {
+      margin-top: 5px;
+      width: 80%;
+    }
+    &-fileNameList {
+      margin-top: 5px;
+      width: 80%;
+    }
+  }
+}
+
+@media all and (max-width: 327px) and (min-width: 50px) {
+  .eaNpamlibrary-wJobdetails {
+    &-inputFieldInfo {
+      margin-left:0%;
+    }
+    &-inputFieldInfoDes {
+      margin-left:0%;
+    }
+    &-jobName {
+      display: block;
+      width: 80%;
+    }
+    &-fileName {
+      display: block;
+      width: 80%;
+    }
+    &-jobDescription {
+      display: block;
+      position: none;
+      top: 0;
+      width: 80%;
+    }
+    &-jobDescriptionBox {
+      width: 80%;
+      margin-top: 5px;
+    }
+    &-jobNameTextBox {
+      margin-top: 5px;
+      width: 80%;
+    }
+    &-fileNameList {
+      margin-top: 5px;
+      width: 80%;
+    }
+  }
+}
+

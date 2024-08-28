@@ -1,0 +1,43 @@
+{
+    "proxy_protocol": "https",
+    "proxy_host": "enmapache.athtem.eei.ericsson.se",
+    "proxy_host_1": "ieatenm5201-7.athtem.eei.ericsson.se",
+    "proxy_port": "443",
+    "username": "administrator",
+    "userpassword": "TestPassw0rd",
+    "mappings": [
+        {
+            "source": "/persistentObject"
+        },
+        {
+            "source": "/modelInfo"
+        },
+        {
+            "source": "/rest"
+        },
+        {
+            "source": "/editprofile"
+        },
+        {
+            "source": "/oss"
+        },
+        {
+            "source": "/object-configuration"
+        },
+        {
+            "source": "/configuration-tasks/v1/tasks"
+        },
+        {
+            "source": "/managedObjects"
+        },
+        {
+            "source": "/topologyCollections"
+        },
+        {
+            "source": "/web-push"
+        },
+        {
+            "source": "/npamservice"
+        }
+    ]
+}

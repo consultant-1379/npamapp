@@ -1,0 +1,145 @@
+.eaNpamlibrary-createTable {
+  &-header {
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #666666;
+
+    &-nodesDisplay{
+      float: left;
+      font-weight: bold;
+      height: 20px;
+      line-height: 2.2rem;
+      margin-right: 10px;
+    }
+
+    &-pageLimit {
+      float: right;
+    }
+
+    &-deleteBtn {
+      float: right;
+      margin-left: 10px;
+    }
+
+    &-selectedRowCount{
+      border-left: 1px solid #ccc;
+      display: inline-block;
+      height: 20px;
+      line-height: 2.2rem;
+      padding-left: 10px;
+      &_show {
+        display: block;
+      }
+
+      &_hide {
+        display: none;
+      }
+    }
+     &-clearSelection {
+      font-size: 13px;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+  &-pagination {
+    display: block !important;
+  }
+  &-loadingAnimation {
+    position: relative;
+    top: 19px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    display: none;
+  }
+
+  &-footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 0;
+  }
+
+  &-pageSizeSelectHolder {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    width: 100px;
+    &_show {
+      display: inline-block;
+    }
+    &_hide {
+      display: none;
+    }
+  }
+
+  &-paginationHolder {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    flex-grow: 0;
+    flex-shrink: 1;
+    padding-bottom: 4px;
+    margin-right: 8px;
+    padding-right: 8px;
+
+    &_fullWidth {
+      max-width: 500px;
+      margin-right: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      right: 8px;
+      top: 2px;
+      bottom: 2px;
+      width: 2px;
+      background-color: #e6e6e6;
+      content: '';
+    }
+
+    &:empty {
+      &,
+      &:after {
+        display: none;
+      }
+    }
+    &_show {
+      display: inline-block;
+      width:auto;
+    }
+    &_hide {
+      display: none;
+    }
+  }
+
+  &-pageSizeSelect {
+    vertical-align: middle;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+  }
+
+  &-pageSizeSelectLabel {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    top: 2px;
+    max-width: calc(~'100% - 100px');
+    padding-right: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

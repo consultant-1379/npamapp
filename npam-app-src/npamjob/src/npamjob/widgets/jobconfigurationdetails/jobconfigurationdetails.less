@@ -1,0 +1,328 @@
+@labelColor: #8d8d8d;
+@valueColor: black;
+
+.eaNpamjob-wJobConfigurationDetails {
+  height: 100%;
+  &-JobHeader {
+    line-height: 1.4rem;
+    word-wrap: break-word;
+  }
+  &-ConfigurationHeader {
+    margin-top: 10px;
+  }
+  &-JobTypeHeader {
+    margin-top: 10px;
+  }
+
+  &-loaderHolder {
+    margin-top: 50px;
+    &_hidden {
+      display: none;
+    }
+  }
+  &-ContentHolder {
+    width: 100%;
+    &_show {
+      display: block;
+    }
+    &_hide {
+      display: none;
+    }
+  }
+
+  &-neType {
+    color: #8d8d8d;
+    font-size: 1.2rem;
+    &_hide {
+      display: none;
+    }
+  }
+  &-neTypeSelectBox {
+    margin-top: 5px;
+    &_hide {
+      display: none;
+    }
+  }
+  &-ContentHolder {
+    width: 100%;
+    &_show {
+      display: block;
+    }
+    &_hide {
+      display: none;
+    }
+  }
+
+  &-HeaderHolder {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    width: 100%;
+    &-Header {
+      padding: 0;
+      border-bottom: none;
+    }
+  }
+
+  &-JobHeaderHolder {
+    margin-bottom: 15px;
+  }
+
+  &-JobContent {
+    text-align: left;
+    vertical-align: middle;
+    height: auto;
+    width: 100%;
+    word-wrap: break-word;
+
+    &_show {
+      display: block;
+    }
+    &_hide {
+      display: none;
+    }
+
+    &-JobDescription-Key {
+      font-size: 1.2rem;
+      color: @labelColor;
+    }
+
+    &-JobDescription-Value {
+      vertical-align: middle;
+      font-size: 1.3rem;
+      color: @valueColor;
+      margin-top: 4px;
+    }
+
+    &-JobType-Key {
+      font-size: 1.2rem;
+      color: @labelColor;
+      line-height: 2.4rem;
+    }
+
+    &-JobType-Value {
+      vertical-align: middle;
+      line-height: 1.2rem;
+      font-size: 1.3rem;
+      color: @valueColor;
+    }
+
+    &-JobCreatedBy {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    &-JobCreatedBy-Key {
+      font-size: 1.2rem;
+      color: @labelColor;
+      line-height: 2.4rem;
+    }
+
+    &-JobCreatedBy-Value {
+      vertical-align: middle;
+      line-height: 1.2rem;
+      font-size: 1.3rem;
+      color: @valueColor;
+    }
+
+    &-JobCreatedOn {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    &-JobCreatedOn-Key {
+      font-size: 1.2rem;
+      color: @labelColor;
+      line-height: 2.4rem;
+    }
+
+    &-JobCreatedOn-Value {
+      vertical-align: middle;
+      line-height: 1.2rem;
+      font-size: 1.3rem;
+      color: @valueColor;
+    }
+
+    &-Filename {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    &-Filename-Key {
+      font-size: 1.2rem;
+      color: @labelColor;
+      line-height: 2.4rem;
+    }
+
+    &-Filename-Value {
+      vertical-align: middle;
+      line-height: 1.2rem;
+      font-size: 1.3rem;
+      color: @valueColor;
+    }
+
+    &-Username {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    &-Username-Key {
+      font-size: 1.2rem;
+      color: @labelColor;
+      line-height: 2.4rem;
+    }
+
+    &-Username-Value {
+      vertical-align: middle;
+      line-height: 1.2rem;
+      font-size: 1.3rem;
+      color: @valueColor;
+    }
+
+    &-Password {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    &-Password-Key {
+      font-size: 1.2rem;
+      color: @labelColor;
+      line-height: 2.4rem;
+    }
+
+    &-Password-Value {
+      vertical-align: middle;
+      line-height: 1.2rem;
+      font-size: 1.3rem;
+      color: @valueColor;
+      padding-right: 5px;
+    }
+  }
+
+  &-ConfigurationHeaderHolder {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  &-ConfigurationContent {
+    text-align: left;
+    vertical-align: middle;
+    line-height: 2.4rem;
+    height: auto;
+    width: 100%;
+    &_show {
+      display: block;
+    }
+    &_hide {
+      display: none;
+    }
+
+    &-ConfigurationStartTime-Key {
+      font-size: 1.2rem;
+      color: @labelColor;
+      padding-bottom: 10px;
+    }
+
+    &-ConfigurationStartTime-Value {
+      vertical-align: middle;
+      font-size: 1.3rem;
+      color: @valueColor;
+    }
+    &-ConfigurationPeriodicDetails-Key {
+      font-size: 1.2rem;
+      color: @labelColor;
+      padding-bottom: 10px;
+    }
+
+    &-ConfigurationPeriodicDetails-Value {
+      vertical-align: middle;
+      font-size: 1.3rem;
+      color: @valueColor;
+    }
+
+//     &-ConfigurationPropertiesDetails-Key {
+//       font-size: 1.2rem;
+//       color: @labelColor;
+//       padding-bottom: 10px;
+//     }
+//     &-ConfigurationPropertiesDetails-Value {
+//       vertical-align: middle;
+//       font-size: 1.3rem;
+//       color: @valueColor;
+//       text-align: left;
+//       line-height: 2.4rem;
+//       padding-bottom: 10px;
+//
+//       &_password {
+//           line-height: 2.4rem;
+//           padding-bottom: 10px;
+//           display:none;
+//       }
+//       &_password::after {
+//         position: relative;
+//         content: '******';
+//       }
+//     }
+
+    &-ConfigurationMode-Key {
+      font-size: 1.2rem;
+      color: @labelColor;
+    }
+
+    &-ConfigurationMode-Value {
+      vertical-align: middle;
+      font-size: 1.3rem;
+      color: @valueColor;
+    }
+  }
+
+  &-JobTypeHeaderHolder {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  &-DefaultMessage {
+    margin-top: 10px;
+    &_show {
+      display: block;
+    }
+    &_hide {
+      display: none;
+    }
+  }
+
+  &-narrowView {
+    display: none;
+  }
+  &-fullView {
+    display: block;
+  }
+
+  @media screen and (max-width: 768px) {
+    &-narrowView {
+      display: block;
+    }
+
+    &-fullView {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    &-searchBtn {
+      min-width: 40px;
+    }
+
+    &-searchBtnSpan {
+      display: none;
+    }
+  }
+
+  &-JobTypeContent {
+    margin-top: 5px;
+    padding-bottom: 14px;
+  }
+  &-JobTypeContent-Sub {
+    margin-left: 10px;
+  }
+}

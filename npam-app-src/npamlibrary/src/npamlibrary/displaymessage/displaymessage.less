@@ -1,0 +1,85 @@
+.eaNpamlibrary-wDisplayMessage {
+  margin: 20px 5px 5px 5px;
+
+  &-titleHolder {
+    width: 100%;
+    display: inline-block;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #e0e0e0;
+    &_show {
+
+    }
+    &_hide {
+      display: none;
+    }
+
+    &-icon {
+      float: left;
+      margin-right: 5px;
+      &_show {
+
+      }
+      &_hide {
+        display: none;
+      }
+    }
+
+    &-content {
+      display: inline;
+      border-bottom: 0;
+      padding: 0;
+      float: left;
+      margin-top: 6px;
+      &_show {
+
+      }
+      &_hide {
+        display: none;
+      }
+    }
+  }
+  &-contentHolder {
+    color: gray;
+    clear: both;
+    margin: 8px 0 0 33px;
+    line-height: 1.7rem;
+    &_left {
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  &-link{
+    cursor:pointer;
+  }
+}
+
+@media all and (max-width: 480px) and (min-width: 50px) {
+  .eaNpamlibrary-wDisplayMessage {
+    &-titleHolder {
+      &-Icon {
+        float: left;
+        margin-right: 5px;
+        &_show {
+
+        }
+        &_hide {
+          display: none;
+        }
+      }
+      &-content {
+        display: inline;
+        line-height: 2.25rem;
+        border-bottom: 0;
+        padding: 0;
+        &_show {
+
+        }
+        &_hide {
+          display: none;
+        }
+      }
+    }
+  }
+
+}

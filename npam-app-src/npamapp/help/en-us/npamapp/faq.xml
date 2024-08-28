@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="Faq">
+    <title>Frequently Asked Questions</title>
+    <conbody>
+        <section>
+            <title id="1">What is the format of the file to be imported by a NPAM job?</title>
+            <p>
+                The file to be imported, in format ".csv", has to contain lines, each with the following fields:
+            </p>
+            <p><b>"NetworkElementName"</b>, <b>"UserName"</b>, <b>"Password"</b>, separated by <b>";"</b> character</p>
+        </section>
+        <section>
+            <title id="2">How to create a Saved Search?</title>
+            <p>
+                You can find the tutorial for this at
+                <xref scope="external" href="#help/app/networkexplorer/topic/tutorials/createAndFavoriteSavedSearch">Create and Favorite a Saved Search</xref>.
+            </p>
+        </section>
+        <section>
+            <title id="3">How to create a Collection?</title>
+            <p>
+                You can find the tutorials for this at
+                <xref scope="external" href="#help/app/collectionmanagement/concept/tutorials">Collection Management Tutorials</xref>.
+            </p>
+        </section>
+    </conbody>
+</concept>
+

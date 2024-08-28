@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BIT tests</title>
+    <script src="../../_tools/index.js"></script>
+    <script src="../../.cdt/require.config.js"></script>
+    <script>
+        loadTestDependencies({
+            requireConfig: {
+                baseUrl: "../../src",
+                i18n:  {
+                    localesDir: "../../locales",
+                    locales: ["en-us"]
+                }
+            },
+            tests: [
+               /*"regions/nodeactivities/nodeactivities",
+                "Npamjobdetails",
+                "regions/comments/comments",
+                "regions/mejobdetails/mejobdetails"/*,
+                "widgets/comment/comment",
+                "widgets/activity/activity",
+                "widgets/progresscell/progresscell",
+                "widgets/resultcell/resultcell"*/
+            ]
+        });
+    </script>
+</head>
+<body>
+<div id = "bitContainer" style="position: absolute; top: 0; visibility: visible"></div>
+</body>
+</html>

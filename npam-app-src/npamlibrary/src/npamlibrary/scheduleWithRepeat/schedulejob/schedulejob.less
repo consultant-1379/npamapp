@@ -1,0 +1,73 @@
+.eaNpamlibrary-wScheduleJob {
+  min-height: auto;
+  &-dateTimeWidgetHolder {
+    display: inline-block;
+  }
+
+  &-optionsHolder{
+    float: left;
+    width: 100%;
+    margin-right: 5px;
+  }
+
+  &-repeatPatternHolder{
+    margin-left: 15px;
+    margin-top: 50px;
+    width: 99%;
+  }
+
+  &-scheduleOptionsSelectBox{
+    display: inline-block;
+  }
+
+  &-scheduleOptionsLabel{
+    padding-right: 20px;
+  }
+  &-errorMessage {
+    display: inline-block;
+  }
+}
+.eaNpamlibrary-wScheduleJob-defaultMessageForStep {
+  color: #999999;
+  margin-bottom: 15px;
+  line-height: 2rem;
+  display: block;
+}
+
+@media all and (max-width: 991px) and (min-width: 501px) {
+    .eaNpamlibrary-wScheduleJob {
+        &-errorMessage {
+          margin-top: 5px;
+          margin-left: 281px;
+          max-width: 350px;
+        }
+    }
+}
+
+@media all and (max-width: 500px) and (min-width: 314px) {
+    .eaNpamlibrary-wScheduleJob {
+        &-dateTimeWidgetHolder {
+            display: block;
+            margin-left: 46px;
+            margin-top: 5px;
+        }
+        &-errorMessage {
+          margin-top: 5px;
+          display: inline-block;
+          max-width: 250px;
+          margin-left: 47px;
+        }
+    }
+}
+
+@media all and (max-width: 313px) and (min-width: 50px) {
+    .eaNpamlibrary-wScheduleJob {
+        &-dateTimeWidgetHolder {
+            display: block;
+            margin-top: 5px;
+        }
+        &-scheduleOptionsLabel {
+            margin-bottom: 3px;
+        }
+    }
+}

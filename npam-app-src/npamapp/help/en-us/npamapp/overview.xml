@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="Overview">
+    <title>Overview</title>
+    <conbody>
+        <p>
+            Network Privileged Access Management (NPAM) allows
+            the creation and the maintenance of the Maintenance Users (MU) of the node directly by ENM.
+        </p>
+
+        <p>
+            The Maintenance User is a user configured locally on the node, and its credentials can be used to connect to the node
+             with high privileges for maintenance activities.
+        </p>
+        <p>For each Network Element managed by the NPAM application, an NE Account object is created for each Maintenance User to 
+        store its credentials and status.</p>
+        <p>The NPAM feature is disabled by default and it must be enabled by a Security Administrator.
+         There is also the option to enable a second Maintenance User to support the CBRS (Citizens Broadband Radio Service) functionality.
+         Use the System Security Configuration UI interface for NPAM configuration management.</p>
+
+        <p>From NPAM application, the following use-cases are available:</p>
+            <ul>
+                <li>Create NE Accounts</li>
+                <li>Detach NE Accounts</li>
+                <li>Rotate NE Account Credentials</li>
+                <li>Rotate NE Account Credentials From File</li>
+                <li>Update NE Accounts Configuration</li>
+                <li>View Job Details</li>
+                <li>View NE Accounts information</li>
+                <li>Export of NE Accounts</li>
+            </ul>
+    </conbody>
+</concept>

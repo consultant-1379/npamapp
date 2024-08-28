@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="UserInterface">
+    <title>User Interface</title>
+    <abstract>
+        <shortdesc>This section describe the Network Privileged Access Management (NPAM) User Interfaces.</shortdesc>
+    </abstract>
+    <conbody>
+        <section>
+            <p>
+                <xref type="concept" href="#neAccount">NE Accounts</xref>
+            </p>
+        </section>
+        <section>
+            <p>
+                <xref type="concept" href="#createNeAccountJob">Create NE Accounts</xref>
+            </p>
+        </section>
+        <section>
+            <p>
+                <xref type="concept" href="#detachNeAccountJob">Detach NE Accounts</xref>
+            </p>
+        </section>
+        <section>
+            <p>
+                <xref type="concept" href="#rotateCredentials">Rotate NE Account Credentials</xref>
+            </p>
+        </section>
+        <section>
+            <p>
+                <xref type="concept" href="#rotateCredentialsFromFile">Rotate NE Account Credentials From File</xref>
+            </p>
+        </section>
+        <section>
+            <p>
+                <xref type="concept" href="#checkNeAccounts">Update NE Accounts Configuration</xref>
+            </p>
+        </section>
+        <section>
+            <p>
+                <xref type="concept" href="#viewJobDetails">View Jobs</xref>
+            </p>
+        </section>
+        <section>
+            <p>
+                <xref type="concept" href="#importNeAccounts">Import</xref>
+            </p>
+        </section>
+        <section>
+            <p>
+                <xref type="concept" href="#exportNeAccounts">Export</xref>
+            </p>
+        </section>
+        <section>
+            <p>
+                <xref type="concept" href="#neAccountStatus">NE Account Status</xref>
+            </p>
+        </section>
+        <section>
+            <p>
+                <xref type="concept" href="#jobType">Job Type</xref>
+            </p>
+        </section>
+        <section>
+            <p>
+                <xref type="concept" href="#jobStatus">Job Status</xref>
+            </p>
+        </section>
+        <section>
+            <p>
+                <xref type="concept" href="#credentials">Credentials</xref>
+            </p>
+        </section>
+        <section>
+            <p>
+                <xref type="concept" href="#passkey">Passkey</xref>
+            </p>
+        </section>        
+        <section>
+            <p>
+                <xref type="concept" href="#schedulingJob">Scheduling Job</xref>
+            </p>
+        </section>
+
+        <section>
+            <p>
+                <xref type="concept" href="#faq">Frequently Asked Questions</xref>
+            </p>
+        </section>
+
+        <section>
+            <title id="npam">Network Privileged Access Management</title>
+            <p>
+                The Network Privileged Access Management main page consists of the following components:
+                <ol>
+                    <li>NE Accounts Table,</li>
+                    <li>Action Bar from where it is possible to manage NPAM jobs, export and imports of NE
+                        Accounts.
+                    </li>                    
+                </ol>
+            </p>
+            <p><b>Note: </b>The main page is accessible even if the NPAM feature is disabled. Limited functionality are available. A warning notification box reports the disable state of the feature.</p>
+            <p>
+                <image href="/resources/disabledNpamWarning.png" alt="DisabledNPAMWarning"/>
+            </p>
+        </section>
+
+        <section>
+            <title id="neAccount">NE Accounts</title>
+            <sectiondiv>
+                <p>For each Network Element managed by the NPAM application, an NE Account object is created for each Maintenance User 
+                to store its credentials and status.</p>
+                <p>From 'Network' panel of main page, the user has to select the relevant Network Elements, then Node are reported in 'Managed' or 'Unmanaged' tab in according with their NE Accounts status.</p> 
+                <p>The following information are available on the <b>Managed Nodes</b> tab in the related table underneath.</p>
+                <ul>
+                    <li><b>Node Name:</b> Name of the Network Element.</li>
+                    <li><b>NE Account Status:</b> Status of NE Account related to Maintenance User with id=1 on the node. See <xref href="#neAccountStatus" type="concept">NE Account Status</xref> for more details.</li>
+                    <li><b>Results:</b> The results of the latest operation executed on the Maintenance User with id=1.</li>
+                    <li><b>Last Updated:</b> The date of the latest operation executed on the Maintenance User with id=1.</li>
+                    <li><b>CBRS Status:</b> Status of the NE CBRS Account related to Maintenance User with id=2 on the node. 'N/A' means Maintenance User with id=2 has not been created on the node. See <xref href="#neAccountStatus" type="concept">NE Account Status</xref> for more details.</li>
+                </ul>
+                <p>
+                    <image href="/resources/neAccountFirstTable.png" alt="neAccount"/>
+                </p>
+                <p>
+                      From <b>Managed Nodes</b> table, selecting an NE Account and clicking <b>"i"</b> icon on the action bar, other details are showed:
+                </p>
+                <p> <b>Node details:</b>
+                    <ul>
+                        <li><b>Node Name:</b> Name of the Network Element.</li>
+                        <li><b>IP Address:</b> IP address of the Network Element.</li>
+                    </ul>
+                </p>
+
+               <p><b>NE Account details</b>:</p>
+                <ul>
+                    <li><b>Current Username:</b> Username of the Maintenance User.</li>
+                    <li><b>Current Password:</b> Password of the Maintenance User.</li>
+                    <li><b>Status:</b> NE Account Status related to the Maintenance User. See <xref href="#neAccountStatus" type="concept">NE Account Status</xref> for more details. </li>
+                    <li><b>Result:</b> The results of the latest operation executed on the Maintenance User.</li>
+                    <li><b>Last Updated:</b> The date of the latest operation executed on the Maintenance User.</li>
+                </ul>
+                <p><b>Note:</b> Current Password is shown hidden as default, clicking on "eye" icon the user with the proper access can see the password in plain text.</p>
+                <p><b>CBRS Account</b>:</p>
+                <ul>
+                <li><b>Status:</b> Status of the NE CBRS Account related to CBRS Maintenance User. 'N/A' means CBRS Maintenance User has not been created on the node. See <xref href="#neAccountStatus" type="concept">NE Account Status</xref> for more details</li>
+                <li><b>Result:</b> The results of the latest operation executed on CBRS Maintenance User.</li>
+                <li><b>Last Updated:</b> The date of the latest operation executed on CBRS Maintenance User.</li>
+                </ul>
+
+                <p>
+                    <image href="/resources/neAccountClear.png" alt="neAccount"/>
+                </p>
+            </sectiondiv>
+
+            <pre>
+            </pre>
+
+        </section>
+        <section>
+            <title id="createNeAccountJob">Create NE Accounts</title>
+            <sectiondiv>
+                <p>
+                    <b>Create NE Accounts Job</b>
+                </p>
+                <p>Create NE Accounts with auto-generated credentials for each involved node.
+                The related Maintenance Users are created on the node and any preexisting Maintenance Users are removed.</p>
+                <p><b>Note:</b>
+                    <ul>
+                       <li>If credentials of preexisting Maintenance Users were configured as secureUser credentials, 
+                       this use-case causes failures across ENM applications.</li>
+                       <li>The execution of this command causes the re-synchronization of the involved nodes,
+                       then perform this operation with limited number of nodes.</li>
+                    </ul>
+                </p>
+                <p>
+                    From NPAM application main page the user has to select the related item <b>Create NE Accounts</b> from pull down menu
+                    <b>Create Job</b>:
+                </p>
+                <p>
+                    <image href="/resources/createNeAccount.png" alt="CreateNeAccountJobok"/>
+                </p>
+
+            </sectiondiv>
+            <p>The following information can be provided:
+                <ul>
+                    <li>
+                        <b>Job Name:</b> Name of the job, it is mandatory and it must be unique for all NPAM Job. Default value has the format, 'jobType_userName_serverDateTimeStamp'.
+                    </li>
+                    <li><b>Job Description:</b> Description of the job. This is optional.</li>
+                    <li><b>Resource:</b> List of Network Elements, Collections and Saved Searches scope of the job. See <xref href="addTopologyData.xml" type="concept">Add Topology Data</xref> for more details.
+                    </li>
+                    <li><b>Schedule:</b> When the job must be executed. This job can be executed immediately or schedule execution to a deferred time. See <xref href="#schedJob" type="concept">Scheduling Job</xref> for more details.
+                    </li>
+                </ul>
+            </p>
+            <pre>
+            </pre>
+        </section>
+        <section>
+            <title id="detachNeAccountJob">Detach NE Accounts</title>
+            <sectiondiv>
+                <p>
+                    <b>Detach NE Accounts Job</b>
+                </p>
+                <p>Move NE Accounts to DETACHED state for each involved nodes. The related Maintenance Users are not more managed.</p>
+                <p><b>Note:</b>
+                    <ul>
+                        <li>The configured Maintenance Users are not deleted on the node, only NE Accounts status is moved to DETACHED.</li>
+                        <li>The execution of this command causes the re-synchronization of the involved nodes, then
+                           perform this operation with with limited number of nodes.</li>
+                    </ul>
+                </p>
+                <p>
+                    From NPAM application main page, the user has to select the related item <b>Detach NE Accounts</b> from pull down menu <b>Create Job</b>:
+                </p>
+                <p>
+                    <image href="/resources/deleteNeAccount.png" alt="CreateNeAccountJobok"/>
+                </p>
+            </sectiondiv>
+            <p>The following information can be provided:
+                <ul>
+                    <li>
+                        <b>Job Name:</b> Name of the job, it is mandatory and it must be unique for all NPAM Job. Default value has the format, 'jobType_userName_serverDateTimeStamp'.
+                    </li>
+                    <li><b>Job Description:</b> Description of the job. This is optional.</li>
+                    <li><b>Resource:</b> List of Network Elements, Collections and Saved Searches scope of the job. See <xref href="addTopologyData.xml" type="concept">Add Topology Data</xref> for more details.
+                    </li>
+                    <li><b>Schedule:</b> When the must be executed. This job can be executed immediately or schedule execution to a deferred time. See <xref href="#schedJob" type="concept">Scheduling Job</xref> for more details.
+                    </li>
+                </ul>
+            </p>
+
+            <pre>
+            </pre>
+
+        </section>
+        <section>
+            <title id="rotateCredentials">Rotate NE Account Credentials</title>
+            <sectiondiv>
+                <p>
+                    <b>Rotate NE Account Credentials job</b>
+                </p>
+                <p>Update credentials in the NE Account and in the related Maintenance User for each involved node. 
+                Credentials can be auto-generated or provided by the operator.</p>
+
+                <p>
+                    From NPAM application main page, the user has to select the related item <b>Rotate NE Account Credentials</b> from pull down menu <b>Create Job</b>:
+                </p>
+                <p>
+                    <image href="/resources/rotatecred.png" alt="CreateNeAccountJobok"/>
+                </p>
+                <p>The following information can be provided:
+                <ul>
+                    <li>
+                        <b>Job Name:</b> Name of the job, it is mandatory and it must be unique for all NPAM Job. Default value has the format, 'jobType_userName_serverDateTimeStamp'.
+                    </li>
+                    <li><b>Job Description:</b> Description of the job. This is optional.</li>
+                    <li><b>Resource:</b> List of Network Elements, Collections and Saved Searches scope of the job. See <xref href="addTopologyData.xml" type="concept">Add Topology Data</xref> for more details.
+                    </li>
+                    <li><b>Credentials:</b> New Credentials (Username and Password) to configure in the relative Maintenance User. See <xref href="#credentials" type="concept">Credentials</xref> for more details.</li>
+                    <li><b>Schedule:</b> When the job must be executed. This job can be executed immediately or schedule execution to a deferred time. If the credentials are auto-generated the schedule can be periodic. See <xref href="#schedJob" type="concept">Scheduling Job</xref> for more details.
+                    </li>
+                </ul>
+            </p>
+                <pre>
+                </pre>
+            </sectiondiv>
+        </section>
+
+        <section>
+            <title id="rotateCredentialsFromFile">Rotate NE Account Credentials From File</title>
+            <sectiondiv>
+                <p>
+                    <b>Rotate NE Account Credentials From File job</b>
+                </p>
+                <p>Update credentials in the NE Account and in the related Maintenance User for each involved node. 
+                Credentials are provided by a file.</p>
+                <p><b>Note:</b> The file can be used just once, to schedule another job with the same file content, the file must be re-imported.
+                </p>
+                <p>
+                    From NPAM application main page, the user has to select the related item <b>Rotate NE Accounts Credentials From File</b> from pull down menu <b>Create Job</b>:
+                </p>
+                <p>
+                    <image href="/resources/rotatecredFromFile.png" alt="CreateNeAccountJobok"/>
+                </p>
+                <p>The following information can be provided:
+                <ul>
+                    <li>
+                        <b>Job Name:</b> Name of the job, it is mandatory and it must be unique for all NPAM Job. Default value has the format, 'jobType_userName_serverDateTimeStamp'.
+                    </li>
+                    <li><b>Job Description:</b> Description of the job. This is optional.</li>
+                    <li><b>Filename:</b> Name of the imported file containing the list of Network Elements and Credentials scope of the job. See <xref href="#importNeAccounts" type="concept">Import</xref> for more details.
+                    </li>
+                    <li><b>Schedule:</b> When the job must be executed. This job can be executed immediately or schedule execution to a deferred time. See <xref href="#schedJob" type="concept">Scheduling Job</xref> for more details.
+                    </li>
+                </ul>
+                </p>
+                <pre>
+                </pre>
+            </sectiondiv>
+        </section>
+        <section>
+            <title id="checkNeAccounts">Update NE Accounts Configuration</title>
+            <sectiondiv>
+                <p>
+                    <b>Check and Update NE Accounts Configuration job</b>
+                </p>
+                <p>Enforce the alignment between the NPAM configuration and the NE Accounts/Maintenance Users for each involved node.</p>
+                <p>This job has to be executed after any NPAM configuration change (see <xref href="/#help/app/syssecconfig/topic/ui~7" scope="external">System Security Configuration</xref>).</p>
+                <p>
+                    From NPAM application main page, the user has to select the related item <b>Update NE Accounts Config</b> from pull down menu <b>Create Job</b>:
+                </p>
+                <p>
+                    <image href="/resources/updateNeAccounts.png" alt="CreateNeAccountJobok"/>
+                </p>
+                <p>The following information can be provided:
+                <ul>
+                    <li>
+                        <b>Job Name:</b> Name of the job, it is mandatory and it must be unique for all NPAM Job. Default value has the format, 'jobType_userName_serverDateTimeStamp'.
+                    </li>
+                    <li><b>Job Description:</b> Description of the job. This is optional.</li>
+                    <li><b>Resource:</b> List of Network Elements, Collections and Saved Searches scope of the job. See <xref href="addTopologyData.xml" type="concept">Add Topology Data</xref> for more details.
+                    </li>                    
+                </ul>
+                </p>
+                <p><b>Note:</b> This job is executed immediately.</p>
+                <pre>
+                </pre>
+            </sectiondiv>
+        </section>
+        <section>
+            <title id="viewJobDetails">View Jobs</title>
+            <sectiondiv>
+                <p>
+                    <b>Jobs</b>
+                </p>
+                <p>
+                The Network Privileged Access Management job view page consists of the following components:
+                <ol>
+                    <li>Jobs Table</li>
+                    <li>Action Bar from where it is possible to create a new Job, and to see the Node Job details.
+                    </li>                    
+                </ol>
+                </p>
+
+                The user can access to job details clicking on <b>View Jobs</b> button of <b>Action Bar</b>.
+                <p>
+                    <image href="/resources/viewJobs.png" alt="ViewJobs"/>
+                </p>
+                <p>
+                    From the displayed <b>Jobs</b> application
+                </p>
+                <p>
+                    <image href="/resources/ViewDetails.png" alt="ViewDetails"/>
+                </p>
+                <p>For each job, the following information are reported into the table:</p>
+                <ul>
+                    <li><b>Job Name:</b> Name of the job. It is a unique identifier.</li>
+                    <li><b>Job Type:</b> Type of Job. See <xref href="#jobType" type="concept">Job Type</xref> for more details.</li>
+                    <li><b>Created By:</b> Who created the Job.</li>
+                    <li><b>Number of Nodes:</b> Number of the Nodes which the Job was executed.</li>
+                    <li><b>Progress:</b> Percentage of the progress.</li>
+                    <li><b>Status:</b> Status of the Job. See See <xref href="#jobStatus" type="concept">Job Status</xref> for more details.</li>
+                    <li><b>Result:</b> The result of the Job, it can be <b>SUCCESS</b> or <b>FAILED</b>. The cause of failure is reported into <b>Error Details</b>.</li>
+                    <li><b>Error Details:</b> The details in case of Error of the entire Job. This column is hidden as default.</li>
+                    <li><b>Start Time:</b> The scheduled start time.</li>
+                    <li><b>End Time:</b> The time of the job finish.</li>
+                </ul>
+                <p>
+                    <b>Note:</b>
+                    the user can customize columns clicking <image href="/resources/gear.png" alt="Gear"/> icon.
+                </p>
+                <p>
+                    Selecting a job and clicking <b>"i"</b> icon on the action bar, other details are showed into <b>Job Summary</b> panel:
+                </p>
+                <p><b>Configuration</b></p>
+                <ul>
+                    <li><b>Description:</b> The job description provided during the job creation.</li>
+                    <li><b>Job Type:</b> Type of job. See <xref href="#jobType" type="concept">Job Type</xref> for more details.</li>
+                    <li><b>Created By:</b> Who created the Job.</li>
+                    <li><b>Created On:</b> Creation time.</li>
+                    <li><b>Mode:</b> Schedule configuration information.</li>
+                </ul>
+                <p><b>Nodes</b></p>
+                <p>List of Network Elements, saved searches, and collections that are the scope of the job.</p>
+                <p>
+                    <image href="/resources/jobConfig.png" alt="Job Summary"/>
+                </p>
+                <p>Selecting a job and clicking on <b>View Job Details</b> button, for each involved node, the details are reported into <b>Node Progress</b> table:</p>                
+                <ul>
+                    <li><b>Node Name:</b> Name of Network Element.</li>
+                    <li><b>Status:</b> Status of the job for the node. See <xref href="#jobStatus" type="concept">Job Status</xref> for more details.</li>
+                    <li><b>Result:</b> The result of the job for the node. It can be <b>SUCCESS</b>, <b>FAILED</b> or <b>SKIPPED</b>. The cause of failure or skipping is reported into <b>Error Details</b>.</li>
+                    <li><b>Start Date:</b> Time of job start execution for the node.</li>
+                    <li><b>End Date:</b> Time of job finish execution for the node.</li>
+                    <li><b>Error Details:</b> Details in case of failure or skipping.</li>
+                </ul>
+                <p>
+                    <image href="/resources/createNeAccountsJobDetails.png" alt="Create NE Accounts Job Details"/>
+                </p>
+            </sectiondiv>
+        </section>
+
+        <section>
+            <title id="importNeAccounts">Import</title>
+            <sectiondiv>
+                <p>
+                    <b>Import NE Accounts</b>
+                </p>
+            </sectiondiv>
+            <p>Clicking <b>Import</b> button from Action Bar, the user can import NE Accounts on Network Elements supporting the feature using a file with a specific format ".csv". </p>
+            <p><b>Import NE Account</b> dialog is opened and user can browse the file.</p>
+            <p>The file must be contains a row for each Network Elements reporting "NetworkElementName", "UserName", "Password", separated by <b>";"</b> character.</p>
+            <p>Clicking <b>Import</b> button from the dialog, the file is validated in terms of syntax and provided credentials, then it is made available for rotate NE Accounts Credentials From File job. See <xref href="#rotateCredentialsFromFile" type="concept">Rotate NE Accounts Credentials From File</xref> for more details.</p>
+            <p>
+                <image href="/resources/ImportFile.png" alt="ImportFile"/>
+            </p>
+            <p><b>Note:</b> In case of syntax errors, only the first five errors are reported.</p>
+        </section>
+
+        <section>
+            <title id="exportNeAccounts">Export</title>
+            <sectiondiv>
+                <p>
+                    <b>Export NE Accounts</b>
+                </p>               
+            </sectiondiv>
+            <p>The user can export NE Accounts available on Network Elements supporting the feature, to a csv file in encrypted mode (format ".enc") containing for each node: NetworkElementName", "UserName", "Password" separated by <b>";"</b> character.</p>
+            <p>Clicking <b>Export All NE Accounts</b> button from Action Bar, all NE Accounts of the managed nodes are exported.</p>
+            <p>Selecting some managed nodes and clicking <b>Export</b> button from Action Bar, only the NE Accounts of the selected nodes are exported.</p>
+            <p>In both case, <b>Export NE Accounts</b> dialog is opened, and the following information are required:</p>
+            <ul>
+               <li><b>Filename:</b> Name of exported file. This is optional, if it's not provided, the file will be saved with the default name 'exportNeAccounts_serverDateTimeStamp.enc'.</li>
+               <li><b>Passkey:</b> The encryption passkey used to encrypt the exported file. It must be compliant with the <xref href="#passkey" type="concept">Passkey Complexity Rule</xref>.</li>
+            </ul>
+
+            <p>
+                <image href="/resources/exportNeAccounts.png" alt="ExportNeAccounts"/>
+            </p>
+
+            <p><b>Note:</b>
+            <ul> 
+                <li>to decrypt the file, the following command can be used: openssl aes-256-cbc -in <i>filename.enc</i> -out <i>filename.csv</i> -d -k '<i>passkey</i>' -md md5</li>
+                <li>it's possible to download a not encrypted file checking the related checkbox. This operation is not recommended.</li>
+            </ul></p>
+        </section>
+
+        <section id="neAccountStatus">
+            <title>NE Account Status</title>
+            <p>NE Account status can be:
+                <ul>
+                    <li><b>CONFIGURED:</b> related Maintenance User is correctly created on the node and credentials are aligned.</li>
+                    <li><b>ONGOING:</b> creation of related Maintenance User or credentials rotation is ongoing.</li>
+                    <li><b>FAILED:</b> creation of related Maintenance User or credentials rotation is failed.</li>
+                    <li><b>DETACHED:</b> NE Account has been detached, ENM is not managing Maintenance Users on the node.</li>
+                </ul>                        
+            </p>
+        </section>
+
+        <section id="jobType">
+            <title>Job type</title>
+            <p>Job type can be:
+                <ul>
+                    <li><b>CREATE_NE_ACCOUNT:</b> Job for NE Account creation. See <xref href="#createNeAccountJob" type="concept">Create NE Accounts</xref> for more details</li>
+                    <li><b>DETACH_NE_ACCOUNT:</b> Job for NE Account detaching. See <xref href="#detachNeAccountJob" type="concept">Detach NE Accounts</xref>  for more details.</li>
+                    <li><b>ROTATE_NE_ACCOUNT_CREDENTIALS:</b> Job for manual credentials rotation. See <xref href="#rotateCredentials" type="concept">Rotate NE Account Credentials</xref> for more details.</li>
+                    <li><b>ROTATE_NE_ACCOUNT_CREDENTIALS_AUTOGENERATED:</b> Job for auto-generated credentials rotation. See <xref href="#rotateCredentials" type="concept">Rotate NE Account Credentials</xref> for more details.</li>
+                    <li><b>ROTATE_NE_ACCOUNT_CREDENTIALS_FROM_FILE:</b> Job for credential rotation from file. See <xref href="#rotateCredentialsFromFile" type="concept">Rotate NE Account Credentials From File</xref> for more details.</li>
+                    <li><b>CHECK_AND_UPDATE_NE_ACCOUNT_CONFIGURATION:</b> Job for check and update of NE Account in according with NPAM configuration. See <xref href="#checkNeAccounts" type="concept">Check and Update NE Accounts Configuration</xref> for more details.</li>
+                </ul>                        
+            </p>
+        </section>
+        <section id="jobtStatus">
+            <title>Job Status</title>
+            <p>Job status can be:
+                <ul>
+                    <li><b>CREATED:</b> Transitory state after job creation.</li>
+                    <li><b>SCHEDULED:</b> The created job is scheduled to execute at a specified date and time.</li>
+                    <li><b>SUBMITTED:</b> The job is triggered and put in the executor queue.</li>
+                    <li><b>RUNNING:</b> The job is in execution.</li>
+                    <li><b>COMPLETED:</b> The execution of the job is completed.</li>
+                    <li><b>USER_CANCELLED:</b> The job is cancelled by the user.</li>
+                </ul>                        
+            </p>
+        </section>
+        
+        <section id="credentials">
+            <title>Credentials</title>
+            <p>Credentials are pair composed by username and password. They can be:</p>
+                <ul>
+                    <li><b>Auto-generated:</b> Defined directly by the application. As default username is set to Node Name.</li>
+                    <li><b>Manually:</b> Defined by customer during the password rotation.</li>
+                </ul>
+
+            <p>Node Password Complexity Rules:</p>
+                <ul>
+                    <li>Only A-Z a-z 0-9 !#$%&amp;()*+,-.:&lt;=&gt;?@[]^_`{|}~ characters are allowed,</li>
+                    <li>minimum password length is 12,</li>
+                    <li>it must contain at least 2 numeric cases (0-9),</li>
+                    <li>it must contain at least 3 uppercase characters (A-Z),</li>
+                    <li>it must contain at least 3 lowercase characters (a-z),</li>
+                    <li>it must contain a special character,</li>
+                    <li>it must not contain username.</li>
+                </ul>
+        </section>
+        <section id="passkey">
+            <title>Passkey</title>
+            <p>Passkey is the encryption key used for exported NE Accounts file.</p>
+            
+            <p>Passkey Complexity Rules:</p>
+                <ul>
+                    <li>Only A-Z a-z 0-9 !#$%&amp;()*+,-.:&lt;=&gt;?@[]^_`{|}~ characters are allowed,</li>
+                    <li>minimum password length is 8,</li>
+                    <li>maximum passkey length is 32.</li>
+                </ul>
+        </section>        
+
+        <section>
+            <title id="schedulingJob">Scheduling Job</title>
+            <sectiondiv>
+                <p>
+                    <b>Scheduling Job</b>
+                </p>
+                <p>Scheduling enables user to execute a job for NE Account creation, NE Account detaching and Rotate NE Account Credentials
+                    at a particular date and time. NPAM provides the following scheduling options to user:
+                </p>
+                <ul>
+                    <li>
+                        <xref href="#schedJob">Schedule Job</xref>
+                    </li>
+                </ul>
+
+            </sectiondiv>
+        </section>
+        <section id="schedJob">
+            <title>Schedule Job</title>
+            <p>For the overall job, there are two scheduling options:</p>
+            <image href="/resources/scheduleUP.png" alt="JobSchedule"/>
+            <ul>
+                <li>
+                    <b>Define job and execute immediately -</b>
+                    This option executes the job immediately after it is created.
+                </li>
+                <li>
+                    <b>Define job and schedule execution -</b>
+                    This option executes the job at a particular date and time which is specified using calendar widget.
+                </li>
+            </ul>
+
+            <p>
+                <b>Note:</b>
+                Selected time is as per the ENM Server Time Zone. It is possible to enter the date and time either
+                manually in the format specified or use the date picker.
+            </p>
+            <sectiondiv>
+                <p>
+                    <b>Periodic Scheduling</b>
+                </p>
+            </sectiondiv>
+            <p>For Rotate NE Account Credentials job only, the user can choose to schedule the specific
+                duration after which
+                the job executes periodically on the selected nodes.
+                It is mandatory to select
+                <b>Generate a new password automatically in Credentials type selection</b>.
+            </p>
+            <p>
+                User has to select
+                <b>Define job and schedule execution</b>
+                option, while scheduling the job to enable the <b>Repeat</b> option.
+            </p>
+            <image href="/resources/repeatBackup.png" alt="repeat"/>
+            <p>
+                User has to select
+                <b>Repeat Pattern Type</b>
+                option, each pattern type denotes the frequency of the job schedule.
+                The following patterns are available:
+            </p>
+            <image href="/resources/repPatType.png" alt="repeattype"/>
+            <ul>
+                <li>
+                    <b>Weekly</b>
+                    - This option executes the job weekly.
+                </li>
+                <li>
+                    <b>Monthly</b>
+                    - This option executes the job monthly.
+                </li>
+                <li>
+                    <b>Yearly</b>
+                    - This option executes the job yearly.
+                </li>
+            </ul>
+            <p>Each Repeat Pattern Type has the following options to specify the exact number of occurrences and the
+                end
+                date for the automatic job execution:
+                <ul>
+                    <li>
+                        <b>Repeat Every</b>- This option is used to specify the time period in Days /Months /Years
+                        after which the job has
+                        to be executed
+                    </li>
+                    <li>
+                        <b>Ends On</b>- This option specified
+                        has three internal options. They are:
+                        <ul>
+                            <li>
+                                <b>Never</b>
+                                - The job is continuously scheduled and executed according to the pattern
+                                specified.
+                            </li>
+                            <li>
+                                <b>After</b>
+                                - The job is scheduled and executed according to the repeat pattern defined only
+                                for a limited number
+                                of times.
+                            </li>
+                            <li>
+                                <b>On</b>
+                                - The job is scheduled and executed according to the repeat pattern defined only
+                                till
+                                the date
+                                specified.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+        </section>
+
+        <section>
+            <title id="faq">Frequently Asked Questions</title>
+            <sectiondiv>
+            </sectiondiv>
+            <p>
+                - What is the format of the file to be imported by a NPAM job?
+            </p>
+            <ul>
+                <li>The file to be imported, in format ".csv", has to contain lines, each with the following fields:</li>
+            </ul>
+            <p><b>"NetworkElementName"</b>, <b>"UserName"</b>, <b>"Password"</b>, separated by <b>";"</b> character.</p>
+            <p>
+                - How to create a Saved Search?
+            </p>
+            <ul>
+                <li>You can find the tutorial for this at
+                    <xref scope="external" href="#help/app/networkexplorer/topic/tutorials/createAndFavoriteSavedSearch">Create and Favorite a Saved Search</xref>.</li>
+            </ul>
+            <p>
+                - How to create a Collection?
+            </p>
+            <ul>
+                <li>You can find the tutorials for this at
+                    <xref scope="external" href="#help/app/collectionmanagement/concept/tutorials">Collection Management Tutorials</xref>.</li>
+            </ul>
+            <p><b>Note:</b> it is mandatory for both saved searches and collections to have Network Elements only in.</p>
+            </section>
+    </conbody>
+</concept>

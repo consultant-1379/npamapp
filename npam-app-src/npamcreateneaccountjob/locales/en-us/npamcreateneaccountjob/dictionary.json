@@ -1,0 +1,6 @@
+{
+    "header": "Create NE Accounts",
+    "warningFinishDialogContent": "The execution of this job causes re-synchronization of the involved nodes.",
+    "content": "Are you sure you want to <replace> Create NE Accounts Job?",
+    "tryAgain": "Unable to contact server. Please try again later..."
+}

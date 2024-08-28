@@ -1,0 +1,27 @@
+version: "2.1"
+
+services:
+
+  selenium:
+    image: selenium/standalone-chrome-debug:3.6.0-copper
+    hostname: "selenium"
+    container_name: "selenium"
+    environment:
+      - JAVA_OPTS=-Dselenium.LOGGER.level=WARNING
+    depends_on:
+      npam-app:
+        condition: service_healthy
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+      - "4444:4444"
+      - "5900:5900"
+      - "7900:7900"
+
+  npam-app:
+    build: npam-app-src/
+    hostname: "npam-app"
+    container_name: "npam-app"
+    ports:
+      - "8585:8585"
+    command: -m

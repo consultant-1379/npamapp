@@ -1,0 +1,145 @@
+@text-color : #333333;
+@description-color : #999999;
+.eaNpamlibrary-finish {
+  min-height: auto;
+  &-clear {
+    clear: both;
+  }
+  &-jobNameHolder {
+    border-bottom: #000000 solid 1px;
+    line-height: 2.0rem;
+    padding: 0 0 0 0;
+    margin: 1.2rem 0 0.7rem 0;
+  }
+
+  &-jobname {
+    word-wrap:break-word;
+    display: inline-block;
+    border-bottom: none !important;
+    padding: 0 0 10px 0 !important;
+    margin: 0 0 0 0!important;
+  }
+  &-jobnameError{
+    margin-left: 10px;
+  }
+  &-leftSection{
+    width: 100%;
+    max-width: 200px;
+    float:left;
+    &-descLabel {
+      float:left;
+      width: auto;
+      min-width: 200px;
+    }
+  }
+  &-leftSectionActivities {
+    width: 100%;
+    max-width: 190px;
+    float:left;
+  }
+  &-leftSectionSubActivities {
+      width: 100%;
+      max-width: 189px;
+      display: inline-block;
+   }
+  &-left {
+    display: inline-block;
+    color: @description-color;
+    font-size: 12px;
+  }
+  &-leftSectionActivities {
+    width: 100%;
+    max-width: 191px;
+    margin-left: 8px;
+    display: inline-block;
+  }
+  &-subLeft{
+    display: inline-block;
+    color: @description-color;
+    width:180px;
+  }
+  &-right {
+    margin-left: 5px;
+    display: inline-block;
+    color:@text-color;
+    font-size: 12px;
+  }
+  &-rightActivities {
+    margin-left: 5px;
+    display: inline-block;
+    color:@text-color;
+    font-size: 12px;
+  }
+  &-row {
+    width: 100%;
+    margin-bottom: 1rem;
+    &_disabled {
+      display: none;
+    }
+  }
+  &-properties {
+    &-selected {
+      margin-left: 10px;
+    }
+  }
+  &-propertiesRow {
+    display: inline-block;
+    width: auto;
+    color: @text-color;
+  }
+  &-message {
+    color: #999999;
+  }
+  &-defaultMessageForStep {
+    color: #999999;
+    margin-bottom: 5px;
+    display: block;
+    line-height: 2rem;
+  }
+//   &-schedulelabel {
+//     margin-left: 10px;
+//     color: @description-color;
+//     width: 14rem;
+//   }
+  &-activity {
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
+  &-desc {
+    float:left;
+    width:calc(~'100% - 210px');
+    line-height:1.75rem;
+    margin-top: -2px;
+    font-size: 12px
+  }
+}
+
+@media all and (max-width: 991px) and (min-width: 50px) {
+  .eaNpamlibrary-finish-ErrorMsg {
+    margin-top: 10px;
+  }
+}
+
+@media all and (max-width: 531px){
+ .eaNpamlibrary-finish {
+    &-leftSection{
+     max-width: 100%;
+     float:left;
+    }
+    &-right {
+     margin-top: 5px;
+    }
+    &-leftSectionActivities {
+     width: auto;
+    }
+    &-rightActivities {
+     margin-top: 0;
+    }
+    &-leftSectionActivities {
+        width: auto;
+    }
+    &-leftSectionSubActivities {
+        width: auto;
+    }
+ }
+}

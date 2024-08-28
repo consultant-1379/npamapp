@@ -1,0 +1,96 @@
+[
+  {
+    "platform": "ECIM",
+    "jobType": "backup",
+    "neActivityInformation": [
+      {
+        "activity": [
+          {
+            "activityParams": [
+              {
+                "param": [
+                  {
+                    "item": [],
+                    "param": [],
+                    "name": "BACKUP_NAME",
+                    "inputType": "TEXT",
+                    "defaultValue": null,
+                    "selectActivity": null,
+                    "deselectActivity": null,
+                    "pattern": "^[a-zA-Z0-9_-\\s]{1,}$",
+                    "selectable": false,
+                    "prompt": null,
+                    "description": null
+                  },
+                  {
+                    "item": [],
+                    "param": [],
+                    "name": "GENERATE_BACKUP_NAME",
+                    "inputType": "MULTI_SELECTION",
+                    "defaultValue": "true",
+                    "selectActivity": null,
+                    "deselectActivity": null,
+                    "pattern": null,
+                    "selectable": false,
+                    "prompt": null,
+                    "description": null
+                  }
+                ],
+                "nodeparam": [
+                  {
+                    "item": [],
+                    "name": "BACKUP_DOMAIN_TYPE",
+                    "inputType": "SINGLE_SELECTION",
+                    "mandatory": true,
+                    "defaultValue": null,
+                    "pattern": null,
+                    "prompt": null,
+                    "description": null
+                  }
+                ]
+              }
+            ],
+            "name": "createbackup",
+            "order": 1,
+            "type": "MOACTION",
+            "mandatory": true,
+            "dependsOn": null,
+            "exclusiveOf": null
+          },
+          {
+            "activityParams": [
+              {
+                "param": [
+                  {
+                    "item": [],
+                    "param": [],
+                    "name": "UPLOAD_BACKUP_DETAILS",
+                    "inputType": "HIDDEN",
+                    "defaultValue": "$BACKUP_NAME/$BACKUP_DOMAIN_TYPE",
+                    "selectActivity": null,
+                    "deselectActivity": null,
+                    "pattern": null,
+                    "selectable": false,
+                    "prompt": null,
+                    "description": null
+                  }
+                ],
+                "nodeparam": []
+              }
+            ],
+            "name": "uploadbackup",
+            "order": 2,
+            "type": "MOACTION",
+            "mandatory": false,
+            "dependsOn": null,
+            "exclusiveOf": null
+          }
+        ],
+        "activityParams": [],
+        "activitySelection": [],
+        "neType": "SGSN-MME"
+      }
+    ],
+    "unsupportedNeTypes": null
+  }
+]
